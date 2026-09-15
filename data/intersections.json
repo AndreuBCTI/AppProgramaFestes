@@ -1,0 +1,1252 @@
+{
+  "intersections": {
+    "jardins del camp de mart -> portal del roser": [
+      {
+        "lat": 41.118893,
+        "lng": 1.254791
+      },
+      {
+        "lat": 41.118462,
+        "lng": 1.254837
+      }
+    ],
+    "portal del roser -> pl. del pallol": [
+      {
+        "lat": 41.118266,
+        "lng": 1.255207
+      },
+      {
+        "lat": 41.117969,
+        "lng": 1.255134
+      }
+    ],
+    "pl. del pallol -> c. cavallers": [
+      {
+        "lat": 41.117969,
+        "lng": 1.255134
+      },
+      {
+        "lat": 41.117377,
+        "lng": 1.256685
+      }
+    ],
+    "c. cavallers -> c. major": [
+      {
+        "lat": 41.117377,
+        "lng": 1.256685
+      },
+      {
+        "lat": 41.11759,
+        "lng": 1.256863
+      }
+    ],
+    "c. cavallers -> c. merceria": [
+      {
+        "lat": 41.117377,
+        "lng": 1.256685
+      },
+      {
+        "lat": 41.11759,
+        "lng": 1.256863
+      },
+      {
+        "lat": 41.117899,
+        "lng": 1.2571
+      },
+      {
+        "lat": 41.1184,
+        "lng": 1.25735
+      },
+      {
+        "lat": 41.118341,
+        "lng": 1.257465
+      }
+    ],
+    "c. merceria -> c. pare iglésias": [
+      {
+        "lat": 41.118341,
+        "lng": 1.257465
+      },
+      {
+        "lat": 41.118131,
+        "lng": 1.25798
+      }
+    ],
+    "c. pare iglésias -> pla de la seu": [
+      {
+        "lat": 41.118131,
+        "lng": 1.25798
+      },
+      {
+        "lat": 41.118476,
+        "lng": 1.258243
+      }
+    ],
+    "c. merceria -> pla de la seu": [
+      {
+        "lat": 41.118341,
+        "lng": 1.257465
+      },
+      {
+        "lat": 41.118131,
+        "lng": 1.25798
+      },
+      {
+        "lat": 41.118476,
+        "lng": 1.258243
+      }
+    ],
+    "pla de la seu -> c. pare iglésias": [
+      {
+        "lat": 41.118476,
+        "lng": 1.258243
+      },
+      {
+        "lat": 41.118131,
+        "lng": 1.25798
+      }
+    ],
+    "c. pare iglésias -> c. merceria": [
+      {
+        "lat": 41.118131,
+        "lng": 1.25798
+      },
+      {
+        "lat": 41.118341,
+        "lng": 1.257465
+      }
+    ],
+    "pla de la seu -> escales de la catedral": [
+      {
+        "lat": 41.118476,
+        "lng": 1.258243
+      },
+      {
+        "lat": 41.11825,
+        "lng": 1.2579
+      }
+    ],
+    "escales de la catedral -> pl. de les cols": [
+      {
+        "lat": 41.11825,
+        "lng": 1.2579
+      },
+      {
+        "lat": 41.1184,
+        "lng": 1.25735
+      }
+    ],
+    "pla de la seu -> pl. de les cols": [
+      {
+        "lat": 41.118476,
+        "lng": 1.258243
+      },
+      {
+        "lat": 41.11825,
+        "lng": 1.2579
+      },
+      {
+        "lat": 41.1184,
+        "lng": 1.25735
+      }
+    ],
+    "c. major -> pl. de les cols": [
+      {
+        "lat": 41.11759,
+        "lng": 1.256863
+      },
+      {
+        "lat": 41.117899,
+        "lng": 1.2571
+      },
+      {
+        "lat": 41.1184,
+        "lng": 1.25735
+      }
+    ],
+    "pl. de les cols -> c. major": [
+      {
+        "lat": 41.1184,
+        "lng": 1.25735
+      },
+      {
+        "lat": 41.117899,
+        "lng": 1.2571
+      },
+      {
+        "lat": 41.11759,
+        "lng": 1.256863
+      }
+    ],
+    "pl. de les cols -> c. merceria": [
+      {
+        "lat": 41.1184,
+        "lng": 1.25735
+      },
+      {
+        "lat": 41.118341,
+        "lng": 1.257465
+      }
+    ],
+    "c. merceria -> pl. de les cols": [
+      {
+        "lat": 41.118341,
+        "lng": 1.257465
+      },
+      {
+        "lat": 41.1184,
+        "lng": 1.25735
+      }
+    ],
+    "c. major -> bda. misericòrdia": [
+      {
+        "lat": 41.117899,
+        "lng": 1.2571
+      },
+      {
+        "lat": 41.11759,
+        "lng": 1.256863
+      },
+      {
+        "lat": 41.117377,
+        "lng": 1.256685
+      },
+      {
+        "lat": 41.1169,
+        "lng": 1.25685
+      }
+    ],
+    "bda. misericòrdia -> c. major": [
+      {
+        "lat": 41.1169,
+        "lng": 1.25685
+      },
+      {
+        "lat": 41.117377,
+        "lng": 1.256685
+      },
+      {
+        "lat": 41.11759,
+        "lng": 1.256863
+      },
+      {
+        "lat": 41.117899,
+        "lng": 1.2571
+      }
+    ],
+    "bda. misericòrdia -> pl. de la font": [
+      {
+        "lat": 41.1169,
+        "lng": 1.25685
+      },
+      {
+        "lat": 41.1165,
+        "lng": 1.2564
+      },
+      {
+        "lat": 41.1161,
+        "lng": 1.256
+      }
+    ],
+    "pl. de la font -> bda. misericòrdia": [
+      {
+        "lat": 41.1161,
+        "lng": 1.256
+      },
+      {
+        "lat": 41.1165,
+        "lng": 1.2564
+      },
+      {
+        "lat": 41.1169,
+        "lng": 1.25685
+      }
+    ],
+    "bda. misericòrdia -> c. cós del bou": [
+      {
+        "lat": 41.1169,
+        "lng": 1.25685
+      },
+      {
+        "lat": 41.11645,
+        "lng": 1.25655
+      }
+    ],
+    "bda. misericòrdia -> c. portalet": [
+      {
+        "lat": 41.1169,
+        "lng": 1.25685
+      },
+      {
+        "lat": 41.1164,
+        "lng": 1.2567
+      },
+      {
+        "lat": 41.116,
+        "lng": 1.25685
+      }
+    ],
+    "c. cós del bou -> pl. de la font": [
+      {
+        "lat": 41.11645,
+        "lng": 1.25655
+      },
+      {
+        "lat": 41.1161,
+        "lng": 1.256
+      }
+    ],
+    "pl. de la font -> c. cós del bou": [
+      {
+        "lat": 41.1161,
+        "lng": 1.256
+      },
+      {
+        "lat": 41.11645,
+        "lng": 1.25655
+      }
+    ],
+    "c. cós del bou -> bda. pescateria": [
+      {
+        "lat": 41.11645,
+        "lng": 1.25655
+      },
+      {
+        "lat": 41.1161,
+        "lng": 1.2569
+      }
+    ],
+    "bda. pescateria -> c. cós del bou": [
+      {
+        "lat": 41.1161,
+        "lng": 1.2569
+      },
+      {
+        "lat": 41.11645,
+        "lng": 1.25655
+      }
+    ],
+    "c. cós del bou -> pl. de l'esperidió": [
+      {
+        "lat": 41.11645,
+        "lng": 1.25655
+      },
+      {
+        "lat": 41.11615,
+        "lng": 1.25675
+      }
+    ],
+    "pl. de l'esperidió -> c. cós del bou": [
+      {
+        "lat": 41.11615,
+        "lng": 1.25675
+      },
+      {
+        "lat": 41.11645,
+        "lng": 1.25655
+      }
+    ],
+    "bda. pescateria -> pl. de l'esperidió": [
+      {
+        "lat": 41.1161,
+        "lng": 1.2569
+      },
+      {
+        "lat": 41.11615,
+        "lng": 1.25675
+      }
+    ],
+    "pl. de l'esperidió -> c. sant oleguer": [
+      {
+        "lat": 41.11615,
+        "lng": 1.25675
+      },
+      {
+        "lat": 41.11535,
+        "lng": 1.25685
+      }
+    ],
+    "c. sant oleguer -> rambla vella": [
+      {
+        "lat": 41.11535,
+        "lng": 1.25685
+      },
+      {
+        "lat": 41.11545,
+        "lng": 1.25635
+      }
+    ],
+    "pl. de l'esperidió -> c. portalet": [
+      {
+        "lat": 41.11615,
+        "lng": 1.25675
+      },
+      {
+        "lat": 41.116,
+        "lng": 1.25685
+      }
+    ],
+    "c. portalet -> rambla vella": [
+      {
+        "lat": 41.116,
+        "lng": 1.25685
+      },
+      {
+        "lat": 41.11545,
+        "lng": 1.25635
+      }
+    ],
+    "c. portalet -> pl. de la font": [
+      {
+        "lat": 41.116,
+        "lng": 1.25685
+      },
+      {
+        "lat": 41.1161,
+        "lng": 1.256
+      }
+    ],
+    "pl. de la font -> c. portalet": [
+      {
+        "lat": 41.1161,
+        "lng": 1.256
+      },
+      {
+        "lat": 41.116,
+        "lng": 1.25685
+      }
+    ],
+    "c. major -> c. de la nau": [
+      {
+        "lat": 41.11759,
+        "lng": 1.256863
+      },
+      {
+        "lat": 41.1171,
+        "lng": 1.257
+      },
+      {
+        "lat": 41.11675,
+        "lng": 1.25735
+      }
+    ],
+    "c. de la nau -> bda. pescateria": [
+      {
+        "lat": 41.11675,
+        "lng": 1.25735
+      },
+      {
+        "lat": 41.1161,
+        "lng": 1.2569
+      }
+    ],
+    "bda. pescateria -> pilats": [
+      {
+        "lat": 41.1161,
+        "lng": 1.2569
+      },
+      {
+        "lat": 41.11655,
+        "lng": 1.2582
+      }
+    ],
+    "pilats -> bda. pescateria": [
+      {
+        "lat": 41.11655,
+        "lng": 1.2582
+      },
+      {
+        "lat": 41.1161,
+        "lng": 1.2569
+      }
+    ],
+    "pilats -> pl. del rei": [
+      {
+        "lat": 41.11655,
+        "lng": 1.2582
+      },
+      {
+        "lat": 41.11675,
+        "lng": 1.2581
+      }
+    ],
+    "pl. del rei -> pilats": [
+      {
+        "lat": 41.11675,
+        "lng": 1.2581
+      },
+      {
+        "lat": 41.11655,
+        "lng": 1.2582
+      }
+    ],
+    "pl. del rei -> c. santa anna": [
+      {
+        "lat": 41.11675,
+        "lng": 1.2581
+      },
+      {
+        "lat": 41.117,
+        "lng": 1.2583
+      }
+    ],
+    "c. santa anna -> pl. del rei": [
+      {
+        "lat": 41.117,
+        "lng": 1.2583
+      },
+      {
+        "lat": 41.11675,
+        "lng": 1.2581
+      }
+    ],
+    "c. santa anna -> pl. del fòrum": [
+      {
+        "lat": 41.117,
+        "lng": 1.2583
+      },
+      {
+        "lat": 41.11735,
+        "lng": 1.25875
+      }
+    ],
+    "pl. del fòrum -> c. santa anna": [
+      {
+        "lat": 41.11735,
+        "lng": 1.25875
+      },
+      {
+        "lat": 41.117,
+        "lng": 1.2583
+      }
+    ],
+    "pl. del fòrum -> c. merceria": [
+      {
+        "lat": 41.11735,
+        "lng": 1.25875
+      },
+      {
+        "lat": 41.118341,
+        "lng": 1.257465
+      }
+    ],
+    "c. merceria -> pl. del fòrum": [
+      {
+        "lat": 41.118341,
+        "lng": 1.257465
+      },
+      {
+        "lat": 41.11735,
+        "lng": 1.25875
+      }
+    ],
+    "pl. del fòrum -> c. nou del patriarca": [
+      {
+        "lat": 41.11735,
+        "lng": 1.25875
+      },
+      {
+        "lat": 41.11715,
+        "lng": 1.25815
+      }
+    ],
+    "c. nou del patriarca -> pla de la seu": [
+      {
+        "lat": 41.11715,
+        "lng": 1.25815
+      },
+      {
+        "lat": 41.118476,
+        "lng": 1.258243
+      }
+    ],
+    "pl. sedassos -> c. sant domènec": [
+      {
+        "lat": 41.1173,
+        "lng": 1.2565
+      },
+      {
+        "lat": 41.117,
+        "lng": 1.2575
+      }
+    ],
+    "c. sant domènec -> pl. de la font": [
+      {
+        "lat": 41.117,
+        "lng": 1.2575
+      },
+      {
+        "lat": 41.11645,
+        "lng": 1.25655
+      },
+      {
+        "lat": 41.1161,
+        "lng": 1.256
+      }
+    ],
+    "rambla vella -> via augusta": [
+      {
+        "lat": 41.11545,
+        "lng": 1.25635
+      },
+      {
+        "lat": 41.1152,
+        "lng": 1.25895
+      }
+    ],
+    "via augusta -> casa de la festa": [
+      {
+        "lat": 41.1152,
+        "lng": 1.25895
+      },
+      {
+        "lat": 41.1143,
+        "lng": 1.25835
+      }
+    ],
+    "casa de la festa -> via augusta": [
+      {
+        "lat": 41.1143,
+        "lng": 1.25835
+      },
+      {
+        "lat": 41.1152,
+        "lng": 1.25895
+      }
+    ],
+    "via augusta -> pg. de sant antoni": [
+      {
+        "lat": 41.1152,
+        "lng": 1.25895
+      },
+      {
+        "lat": 41.11765,
+        "lng": 1.26055
+      }
+    ],
+    "pg. de sant antoni -> portal de sant antoni": [
+      {
+        "lat": 41.11765,
+        "lng": 1.26055
+      },
+      {
+        "lat": 41.11725,
+        "lng": 1.25995
+      }
+    ],
+    "portal de sant antoni -> c. dels descalços": [
+      {
+        "lat": 41.11725,
+        "lng": 1.25995
+      },
+      {
+        "lat": 41.1185,
+        "lng": 1.25925
+      }
+    ],
+    "c. dels descalços -> c. de les coques": [
+      {
+        "lat": 41.1185,
+        "lng": 1.25925
+      },
+      {
+        "lat": 41.11825,
+        "lng": 1.25805
+      }
+    ],
+    "c. de les coques -> pla de la seu": [
+      {
+        "lat": 41.11825,
+        "lng": 1.25805
+      },
+      {
+        "lat": 41.118476,
+        "lng": 1.258243
+      }
+    ],
+    "rambla vella -> c. comte de rius": [
+      {
+        "lat": 41.11545,
+        "lng": 1.25635
+      },
+      {
+        "lat": 41.11565,
+        "lng": 1.25585
+      }
+    ],
+    "pl. de la font -> c. comte de rius": [
+      {
+        "lat": 41.1161,
+        "lng": 1.256
+      },
+      {
+        "lat": 41.11565,
+        "lng": 1.25585
+      }
+    ],
+    "c. comte de rius -> rambla nova": [
+      {
+        "lat": 41.11565,
+        "lng": 1.25585
+      },
+      {
+        "lat": 41.1158,
+        "lng": 1.2536
+      }
+    ],
+    "rambla nova -> al balcó del mediterrani": [
+      {
+        "lat": 41.1158,
+        "lng": 1.2536
+      },
+      {
+        "lat": 41.1136,
+        "lng": 1.2563
+      }
+    ],
+    "rambla nova -> c. sant agustí": [
+      {
+        "lat": 41.1158,
+        "lng": 1.2536
+      },
+      {
+        "lat": 41.11595,
+        "lng": 1.25505
+      }
+    ],
+    "c. sant agustí -> c. portalet": [
+      {
+        "lat": 41.11595,
+        "lng": 1.25505
+      },
+      {
+        "lat": 41.116,
+        "lng": 1.25685
+      }
+    ],
+    "rambla nova -> c. cañellas": [
+      {
+        "lat": 41.1158,
+        "lng": 1.2536
+      },
+      {
+        "lat": 41.1158,
+        "lng": 1.251
+      }
+    ],
+    "c. cañellas -> pl. corsini": [
+      {
+        "lat": 41.1158,
+        "lng": 1.251
+      },
+      {
+        "lat": 41.1157,
+        "lng": 1.2498
+      }
+    ],
+    "pl. corsini -> c. lleida": [
+      {
+        "lat": 41.1157,
+        "lng": 1.2498
+      },
+      {
+        "lat": 41.115,
+        "lng": 1.2485
+      }
+    ],
+    "c. lleida -> c. sevilla": [
+      {
+        "lat": 41.115,
+        "lng": 1.2485
+      },
+      {
+        "lat": 41.1145,
+        "lng": 1.2475
+      }
+    ],
+    "c. sevilla -> c. vapor": [
+      {
+        "lat": 41.1145,
+        "lng": 1.2475
+      },
+      {
+        "lat": 41.1135,
+        "lng": 1.2465
+      }
+    ],
+    "c. vapor -> pl. dels infants": [
+      {
+        "lat": 41.1135,
+        "lng": 1.2465
+      },
+      {
+        "lat": 41.1125,
+        "lng": 1.2455
+      }
+    ],
+    "pl. dels infants -> c. reial": [
+      {
+        "lat": 41.1125,
+        "lng": 1.2455
+      },
+      {
+        "lat": 41.1115,
+        "lng": 1.2445
+      }
+    ],
+    "c. reial -> c. pere martell": [
+      {
+        "lat": 41.1115,
+        "lng": 1.2445
+      },
+      {
+        "lat": 41.1105,
+        "lng": 1.2435
+      }
+    ],
+    "c. pere martell -> al moll de costa.": [
+      {
+        "lat": 41.1105,
+        "lng": 1.2435
+      },
+      {
+        "lat": 41.1095,
+        "lng": 1.242
+      }
+    ],
+    "rambla nova -> c. unió": [
+      {
+        "lat": 41.1158,
+        "lng": 1.2536
+      },
+      {
+        "lat": 41.1151,
+        "lng": 1.25175
+      }
+    ],
+    "c. unió -> pl. mitja lluna": [
+      {
+        "lat": 41.1151,
+        "lng": 1.25175
+      },
+      {
+        "lat": 41.1144,
+        "lng": 1.25105
+      }
+    ],
+    "pl. mitja lluna -> c. apodaca": [
+      {
+        "lat": 41.1144,
+        "lng": 1.25105
+      },
+      {
+        "lat": 41.11375,
+        "lng": 1.25145
+      }
+    ],
+    "c. apodaca -> c. orosi": [
+      {
+        "lat": 41.11375,
+        "lng": 1.25145
+      },
+      {
+        "lat": 41.113,
+        "lng": 1.25275
+      }
+    ],
+    "c. orosi -> c. del comerç": [
+      {
+        "lat": 41.113,
+        "lng": 1.25275
+      },
+      {
+        "lat": 41.1132,
+        "lng": 1.25305
+      }
+    ],
+    "c. del comerç -> c. anselm clavé": [
+      {
+        "lat": 41.1132,
+        "lng": 1.25305
+      },
+      {
+        "lat": 41.1127,
+        "lng": 1.252
+      }
+    ],
+    "c. anselm clavé -> pl. dels carros": [
+      {
+        "lat": 41.1127,
+        "lng": 1.252
+      },
+      {
+        "lat": 41.1118,
+        "lng": 1.2532
+      }
+    ],
+    "rambla nova -> al davant de la font del centenari": [
+      {
+        "lat": 41.1158,
+        "lng": 1.2536
+      },
+      {
+        "lat": 41.1178,
+        "lng": 1.2483
+      }
+    ],
+    "c. riu fluvià amb sant benilde -> c. prades": [
+      {
+        "lat": 41.119,
+        "lng": 1.2086
+      },
+      {
+        "lat": 41.1191,
+        "lng": 1.2104
+      }
+    ],
+    "c. prades -> c. amposta": [
+      {
+        "lat": 41.1191,
+        "lng": 1.2104
+      },
+      {
+        "lat": 41.119,
+        "lng": 1.2096
+      }
+    ],
+    "c. amposta -> c. riu glorieta": [
+      {
+        "lat": 41.119,
+        "lng": 1.2096
+      },
+      {
+        "lat": 41.1162,
+        "lng": 1.2081
+      }
+    ],
+    "c. riu glorieta -> pl. pilar pradells": [
+      {
+        "lat": 41.1162,
+        "lng": 1.2081
+      },
+      {
+        "lat": 41.1147,
+        "lng": 1.2057
+      }
+    ],
+    "rambla de campclar -> c. riu montsant": [
+      {
+        "lat": 41.1165,
+        "lng": 1.2104
+      },
+      {
+        "lat": 41.1172,
+        "lng": 1.2104
+      }
+    ],
+    "c. riu montsant -> c. riu glorieta": [
+      {
+        "lat": 41.1172,
+        "lng": 1.2104
+      },
+      {
+        "lat": 41.1162,
+        "lng": 1.2081
+      }
+    ]
+  },
+  "aliases": {
+    "carrer cavallers": "c. cavallers",
+    "plaça del pallol": "pl. del pallol",
+    "plaça pallol": "pl. del pallol",
+    "carrer merceria": "c. merceria",
+    "carrer pare iglésias": "c. pare iglésias",
+    "plaça de les cols": "pl. de les cols",
+    "pl. cols": "pl. de les cols",
+    "plaça cols": "pl. de les cols",
+    "carrer major": "c. major",
+    "baixada misericòrdia": "bda. misericòrdia",
+    "carrer cós del bou": "c. cós del bou",
+    "plaça de la font": "pl. de la font",
+    "carrer de la nau": "c. de la nau",
+    "baixada pescateria": "bda. pescateria",
+    "plaça de l'esperidió": "pl. de l'esperidió",
+    "plaça de l’esperidió": "pl. de l'esperidió",
+    "pl. de l’esperidió": "pl. de l'esperidió",
+    "carrer portalet": "c. portalet",
+    "carrer sant oleguer": "c. sant oleguer",
+    "jardins de la casa de la festa": "casa de la festa",
+    "carrer dels descalços": "c. dels descalços",
+    "carrer de les coques": "c. de les coques",
+    "plaça del rei": "pl. del rei",
+    "carrer santa anna": "c. santa anna",
+    "plaça del fòrum": "pl. del fòrum",
+    "carrer nou del patriarca": "c. nou del patriarca",
+    "carrer comte de rius": "c. comte de rius",
+    "carrer sant agustí": "c. sant agustí",
+    "carrer unió": "c. unió",
+    "plaça mitja lluna": "pl. mitja lluna",
+    "carrer apodaca": "c. apodaca",
+    "carrer orosi": "c. orosi",
+    "carrer del comerç": "c. del comerç",
+    "carrer anselm clavé": "c. anselm clavé",
+    "plaça dels carros": "pl. dels carros",
+    "carrer riu montsant": "c. riu montsant",
+    "carrer riu glorieta": "c. riu glorieta",
+    "carrer riu fluvià amb sant benilde": "c. riu fluvià amb sant benilde",
+    "carrer prades": "c. prades",
+    "carrer amposta": "c. amposta",
+    "plaça pilar pradells": "pl. pilar pradells",
+    "passeig de sant antoni": "pg. de sant antoni"
+  },
+  "single_fallbacks": {
+    "jardins del camp de mart": {
+      "lat": 41.118893,
+      "lng": 1.254791
+    },
+    "portal del roser": {
+      "lat": 41.118462,
+      "lng": 1.254837
+    },
+    "pl. del pallol": {
+      "lat": 41.117969,
+      "lng": 1.255134
+    },
+    "c. cavallers": {
+      "lat": 41.117377,
+      "lng": 1.256685
+    },
+    "c. merceria": {
+      "lat": 41.118341,
+      "lng": 1.257465
+    },
+    "c. pare iglésias": {
+      "lat": 41.118131,
+      "lng": 1.25798
+    },
+    "pla de la seu": {
+      "lat": 41.118476,
+      "lng": 1.258243
+    },
+    "escales de la catedral": {
+      "lat": 41.11825,
+      "lng": 1.2579
+    },
+    "pl. de les cols": {
+      "lat": 41.1184,
+      "lng": 1.25735
+    },
+    "c. major": {
+      "lat": 41.11759,
+      "lng": 1.256863
+    },
+    "bda. misericòrdia": {
+      "lat": 41.1169,
+      "lng": 1.25685
+    },
+    "c. cós del bou": {
+      "lat": 41.11645,
+      "lng": 1.25655
+    },
+    "pl. de la font": {
+      "lat": 41.1161,
+      "lng": 1.256
+    },
+    "c. de la nau": {
+      "lat": 41.11675,
+      "lng": 1.25735
+    },
+    "bda. pescateria": {
+      "lat": 41.1161,
+      "lng": 1.2569
+    },
+    "pl. de l'esperidió": {
+      "lat": 41.11615,
+      "lng": 1.25675
+    },
+    "c. portalet": {
+      "lat": 41.116,
+      "lng": 1.25685
+    },
+    "rambla vella": {
+      "lat": 41.11545,
+      "lng": 1.25635
+    },
+    "via augusta": {
+      "lat": 41.1152,
+      "lng": 1.25895
+    },
+    "c. sant oleguer": {
+      "lat": 41.11535,
+      "lng": 1.25685
+    },
+    "casa de la festa": {
+      "lat": 41.1143,
+      "lng": 1.25835
+    },
+    "jardins de la casa de la festa": {
+      "lat": 41.1143,
+      "lng": 1.25835
+    },
+    "passeig de sant antoni": {
+      "lat": 41.11765,
+      "lng": 1.26055
+    },
+    "pg. de sant antoni": {
+      "lat": 41.11765,
+      "lng": 1.26055
+    },
+    "portal de sant antoni": {
+      "lat": 41.11725,
+      "lng": 1.25995
+    },
+    "c. dels descalços": {
+      "lat": 41.1185,
+      "lng": 1.25925
+    },
+    "c. de les coques": {
+      "lat": 41.11825,
+      "lng": 1.25805
+    },
+    "pilats": {
+      "lat": 41.11655,
+      "lng": 1.2582
+    },
+    "pl. del rei": {
+      "lat": 41.11675,
+      "lng": 1.2581
+    },
+    "c. santa anna": {
+      "lat": 41.117,
+      "lng": 1.2583
+    },
+    "pl. del fòrum": {
+      "lat": 41.11735,
+      "lng": 1.25875
+    },
+    "c. nou del patriarca": {
+      "lat": 41.11715,
+      "lng": 1.25815
+    },
+    "rambla nova": {
+      "lat": 41.1158,
+      "lng": 1.2536
+    },
+    "c. comte de rius": {
+      "lat": 41.11565,
+      "lng": 1.25585
+    },
+    "c. sant agustí": {
+      "lat": 41.11595,
+      "lng": 1.25505
+    },
+    "al balcó del mediterrani": {
+      "lat": 41.1136,
+      "lng": 1.2563
+    },
+    "c. unió": {
+      "lat": 41.1151,
+      "lng": 1.25175
+    },
+    "pl. mitja lluna": {
+      "lat": 41.1144,
+      "lng": 1.25105
+    },
+    "c. apodaca": {
+      "lat": 41.11375,
+      "lng": 1.25145
+    },
+    "c. orosi": {
+      "lat": 41.113,
+      "lng": 1.25275
+    },
+    "c. del comerç": {
+      "lat": 41.1132,
+      "lng": 1.25305
+    },
+    "c. anselm clavé": {
+      "lat": 41.1127,
+      "lng": 1.252
+    },
+    "pl. dels carros": {
+      "lat": 41.1118,
+      "lng": 1.2532
+    },
+    "rambla de campclar": {
+      "lat": 41.1165,
+      "lng": 1.2104
+    },
+    "c. riu montsant": {
+      "lat": 41.1172,
+      "lng": 1.2104
+    },
+    "c. riu glorieta": {
+      "lat": 41.1162,
+      "lng": 1.2081
+    },
+    "c. riu fluvià amb sant benilde": {
+      "lat": 41.119,
+      "lng": 1.2086
+    },
+    "c. prades": {
+      "lat": 41.1191,
+      "lng": 1.2104
+    },
+    "c. amposta": {
+      "lat": 41.119,
+      "lng": 1.2096
+    },
+    "pl. pilar pradells": {
+      "lat": 41.1147,
+      "lng": 1.2057
+    },
+    "al davant de la font del centenari": {
+      "lat": 41.1178,
+      "lng": 1.2483
+    },
+    "pl. sedassos": {
+      "lat": 41.1173,
+      "lng": 1.2565
+    },
+    "c. sant domènec": {
+      "lat": 41.117,
+      "lng": 1.2575
+    },
+    "c. cañellas": {
+      "lat": 41.1158,
+      "lng": 1.251
+    },
+    "pl. corsini": {
+      "lat": 41.1157,
+      "lng": 1.2498
+    },
+    "c. lleida": {
+      "lat": 41.115,
+      "lng": 1.2485
+    },
+    "c. sevilla": {
+      "lat": 41.1145,
+      "lng": 1.2475
+    },
+    "c. vapor": {
+      "lat": 41.1135,
+      "lng": 1.2465
+    },
+    "pl. dels infants": {
+      "lat": 41.1125,
+      "lng": 1.2455
+    },
+    "c. reial": {
+      "lat": 41.1115,
+      "lng": 1.2445
+    },
+    "c. pere martell": {
+      "lat": 41.1105,
+      "lng": 1.2435
+    },
+    "al moll de costa.": {
+      "lat": 41.1095,
+      "lng": 1.242
+    }
+  }
+}

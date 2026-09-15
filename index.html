@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Festes Santa Tecla 2026 - Guia Interactiva i Programa Oficial</title>
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"
+    />
+
+    <!-- PWA Manifest i Metadades Mòbils -->
+    <link rel="manifest" href="manifest.json?v=1" />
+    <meta name="theme-color" content="#c8102e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Santa Tecla 2026" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon.png?v=2" />
+    <link rel="apple-touch-icon" href="img/icon-192.png" />
+
+    <!-- Estils propis extrets -->
+    <link rel="stylesheet" href="css/styles.css?v=20" />
+  </head>
+  <body>
+    <header>
+      <h1>Festes Santa Tecla 2026</h1>
+      <div class="nav-tabs">
+        <button id="nav-btn-map" class="active" onclick="switchTab('map')">
+          🗺️ Guia i Mapa
+        </button>
+        <button id="nav-btn-reader" onclick="switchTab('reader')">
+          📖 Llibret
+        </button>
+      </div>
+    </header>
+
+    <!-- PESTANYA 1: GUIA INTERACTIVA -->
+    <div id="tab-map" class="tab-pane">
+      <div class="controls-bar">
+        <div class="controls-row-1">
+          <div class="btn-group">
+            <button id="btn-day-12" class="active" onclick="setDay('2026-09-12')">Ds 12</button>
+            <button id="btn-day-13" onclick="setDay('2026-09-13')">Dg 13</button>
+            <button id="btn-day-14" onclick="setDay('2026-09-14')">Dl 14</button>
+            <button id="btn-day-15" onclick="setDay('2026-09-15')">Dm 15</button>
+            <button id="btn-day-16" onclick="setDay('2026-09-16')">Dc 16</button>
+            <button id="btn-day-17" onclick="setDay('2026-09-17')">Dj 17</button>
+            <button id="btn-day-18" onclick="setDay('2026-09-18')">Dv 18</button>
+            <button id="btn-day-19" onclick="setDay('2026-09-19')">Ds 19</button>
+            <button id="btn-day-20" onclick="setDay('2026-09-20')">Dg 20</button>
+            <button id="btn-day-21" onclick="setDay('2026-09-21')">Dl 21</button>
+            <button id="btn-day-22" onclick="setDay('2026-09-22')">Dm 22</button>
+            <button id="btn-day-22-23" class="btn-night-tab" onclick="setDay('2026-09-22 to 2026-09-23')">Del 22 al 23 🌙</button>
+            <button id="btn-day-23" onclick="setDay('2026-09-23')">Dc 23</button>
+            <button id="btn-day-24" onclick="setDay('2026-09-24')">Dj 24</button>
+          </div>
+
+          <div class="filter-mode">
+            <input
+              type="checkbox"
+              id="chk-all-day"
+              onchange="toggleAllDay(this.checked)"
+            />
+            <label for="chk-all-day">Tot el dia</label>
+          </div>
+        </div>
+
+        <div class="controls-row-2">
+          <button
+            class="nav-arrow-btn"
+            onclick="shiftHour(-1)"
+            aria-label="Hora anterior"
+          >
+            ◀
+          </button>
+          <div class="slider-container">
+            <input
+              type="range"
+              id="hour-slider"
+              min="8"
+              max="26"
+              step="1"
+              value="9"
+              oninput="updateTimeSliderManual(this.value)"
+            />
+          </div>
+          <button
+            class="nav-arrow-btn"
+            onclick="shiftHour(1)"
+            aria-label="Hora següent"
+          >
+            ▶
+          </button>
+          <div id="time-val" class="time-display">09:00 h - 09:59 h</div>
+        </div>
+      </div>
+
+      <div class="map-app-container">
+        <div class="map-panel">
+          <div id="map"></div>
+        </div>
+
+        <div class="schedule-panel-wrapper" id="swipe-area">
+          <!-- Pull to Refresh Indicator -->
+          <div id="ptr-indicator" class="ptr-indicator">
+            <div id="ptr-icon" class="ptr-icon">⬇️</div>
+            <div id="ptr-label" class="ptr-label">Estira cap avall per actualitzar...</div>
+          </div>
+
+          <!-- Onboarding Swipe Guidance Banner -->
+          <div id="swipe-hint-banner" class="swipe-hint-banner">
+            <div class="swipe-hint-text">
+              <span class="swipe-hand-icon">👈 👆 👉</span>
+              <span><strong>Consell gestual:</strong> Glissa als costats per canviar d'hora i cap avall per actualitzar.</span>
+            </div>
+            <button class="swipe-hint-close" onclick="dismissSwipeHint()" aria-label="Tancar consell">&times;</button>
+          </div>
+
+          <!-- Side Swipe Cues for Mobile Navigation -->
+          <button class="swipe-cue swipe-cue-left" onclick="shiftHour(-1)" aria-label="Hora anterior">◀</button>
+          <button class="swipe-cue swipe-cue-right" onclick="shiftHour(1)" aria-label="Hora següent">▶</button>
+
+          <div class="schedule-slide" id="schedule-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="app-toast" class="app-toast"></div>
+
+    <!-- PESTANYA 2: PROGRAMA TRADICIONAL (LLIBRET) -->
+    <div id="tab-reader" class="tab-pane hidden">
+      <div class="pdf-sticky-banner">
+        <div style="font-size: 0.85rem; font-weight: 600; color: #444">
+          Programa imprès original per l'Ajuntament de Tarragona
+        </div>
+        <a
+          id="pdf-official-btn"
+          href="https://www.tarragona.cat/cultura/festes-i-cultura-popular/santa-tecla/fitxers/altres/programes/programa-dactes-de-santa-tecla-2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="pdf-btn"
+        >
+          📄 Descarregar o Veure PDF Oficial
+        </a>
+      </div>
+
+      <!-- Contingut carregat dinàmicament des del JSON -->
+      <div id="reader-content"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+    <!-- Dades d'ubicacions i programa (Carregades com a variables per a compatibilitat amb doble clic file://) -->
+    <script src="data/locations.js?v=35"></script>
+    <script src="data/program.js?v=57"></script>
+
+    <!-- Lògica de l'aplicació -->
+    <script src="js/app.js?v=49"></script>
+  </body>
+</html>

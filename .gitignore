@@ -1,0 +1,6 @@
+# Fitxers i carpetes d'eines de desenvolupament (només locals)
+tools/
+*.py
+*.txt
+.DS_Store
+*.log
