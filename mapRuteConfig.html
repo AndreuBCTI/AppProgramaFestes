@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurador d'Itineraris - Santa Tecla 2026</title>
+    <title>Configurador d'Ubicacions i Itineraris - Santa Tecla 2026</title>
     
     <!-- PWA Manifest i Metadades Mòbils -->
     <link rel="manifest" href="manifest.json?v=1" />
@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="img/favicon.png?v=2" />
     <link rel="apple-touch-icon" href="img/icon-192.png" />
 
-    <!-- Leaflet CSS -->
+    <!-- Leaflet CSS i Fonts -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -51,7 +51,7 @@
 
         /* Sidebar Styles */
         .sidebar {
-            width: 420px;
+            width: 440px;
             background: var(--panel-bg);
             border-right: 1px solid var(--panel-border);
             display: flex;
@@ -61,13 +61,13 @@
         }
 
         .sidebar-header {
-            padding: 20px;
+            padding: 16px 20px;
             background: #0f172a;
             border-bottom: 1px solid var(--panel-border);
         }
 
         .sidebar-header h1 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--accent);
             display: flex;
@@ -76,9 +76,44 @@
         }
 
         .sidebar-header p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            margin-top: 5px;
+            margin-top: 4px;
+        }
+
+        /* Navigation Tabs */
+        .section-tabs {
+            display: flex;
+            background: #0f172a;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+            background: rgba(245, 158, 11, 0.08);
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: var(--text-light);
+            background: rgba(255,255,255,0.03);
         }
 
         .stats-bar {
@@ -86,10 +121,10 @@
             justify-content: space-between;
             align-items: center;
             background: rgba(255,255,255,0.05);
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 8px;
-            margin-top: 12px;
-            font-size: 0.85rem;
+            margin-top: 8px;
+            font-size: 0.8rem;
             font-weight: 500;
         }
 
@@ -102,11 +137,11 @@
         }
 
         .filter-box {
-            padding: 15px 20px;
+            padding: 12px 16px;
             border-bottom: 1px solid var(--panel-border);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
 
         .search-input {
@@ -116,7 +151,7 @@
             border: 1px solid var(--panel-border);
             border-radius: 8px;
             color: #fff;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             outline: none;
         }
 
@@ -136,7 +171,7 @@
             border: 1px solid var(--panel-border);
             color: var(--text-muted);
             border-radius: 6px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             cursor: pointer;
             transition: all 0.2s;
         }
@@ -147,96 +182,120 @@
             border-color: var(--primary);
         }
 
-        .events-list {
-            flex: 1;
-            overflow-y: auto;
-            padding: 15px 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .event-card {
-            background: #0f172a;
-            border: 1px solid var(--panel-border);
-            border-radius: 10px;
-            padding: 14px;
+        .btn-add-new {
+            padding: 8px 12px;
+            background: var(--success);
+            color: #000;
+            font-weight: 700;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
             cursor: pointer;
-            transition: all 0.2s;
-            position: relative;
-        }
-
-        .event-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        .event-card.selected {
-            border-color: var(--accent);
-            background: rgba(245, 158, 11, 0.08);
-            box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
-        }
-
-        .event-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .event-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #fff;
-            line-height: 1.3;
-        }
-
-        .status-check {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
-            flex-shrink: 0;
+            gap: 6px;
+            transition: all 0.2s;
         }
 
-        .status-check.configured {
-            background: rgba(16, 185, 129, 0.2);
-            color: var(--success);
-            border: 1px solid var(--success);
+        .btn-add-new:hover {
+            opacity: 0.9;
         }
 
-        .status-check.pending {
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--accent);
-            border: 1px solid var(--accent);
+        .list-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .event-meta {
+        .item-card {
+            background: #0f172a;
+            border: 1px solid var(--panel-border);
+            border-radius: 8px;
+            padding: 10px 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .item-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .item-card.selected {
+            border-color: var(--accent);
+            background: rgba(245, 158, 11, 0.12);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 2px;
+        }
+
+        .item-meta {
             font-size: 0.78rem;
             color: var(--text-muted);
-            margin-top: 6px;
             display: flex;
-            gap: 12px;
+            gap: 10px;
+            margin-bottom: 2px;
         }
 
-        .event-desc {
-            font-size: 0.8rem;
+        .item-desc {
+            font-size: 0.78rem;
             color: #cbd5e1;
-            margin-top: 8px;
-            background: rgba(255,255,255,0.03);
-            padding: 8px;
-            border-radius: 6px;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
-        /* Map Container */
+        /* Form Editor for Fixed Locations */
+        .location-editor-panel {
+            padding: 14px 16px;
+            background: #0f172a;
+            border-top: 1px solid var(--panel-border);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .form-group input {
+            padding: 7px 10px;
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.82rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        /* Map Area */
         .map-container {
             flex: 1;
             position: relative;
-            height: 100vh;
+            background: #000;
         }
 
         #map {
@@ -244,225 +303,269 @@
             height: 100%;
         }
 
-        /* Floating Toolbar over Map */
-        .map-toolbar {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(30, 41, 59, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--panel-border);
-            padding: 12px 18px;
-            border-radius: 12px;
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-        }
-
-        .tool-btn {
-            background: #0f172a;
-            border: 1px solid var(--panel-border);
-            color: #fff;
-            padding: 9px 14px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-        }
-
-        .tool-btn:hover {
-            background: #334155;
-        }
-
-        .tool-btn.btn-save {
-            background: var(--success);
-            color: #000;
-            font-weight: 700;
-            border: none;
-        }
-
-        .tool-btn.btn-save:hover {
-            background: #059669;
-            color: #fff;
-        }
-
-        .tool-btn.btn-clear {
-            background: rgba(239, 68, 68, 0.2);
-            color: #ef4444;
-            border-color: rgba(239, 68, 68, 0.4);
-        }
-
-        .tool-btn.btn-clear:hover {
-            background: #ef4444;
-            color: #fff;
-        }
-
-        /* Active Event Banner overlay on top of map */
-        .active-event-banner {
+        .active-banner {
             position: absolute;
             top: 20px;
             left: 20px;
-            z-index: 1000;
-            background: rgba(15, 23, 42, 0.9);
+            right: 20px;
+            background: rgba(30, 41, 59, 0.94);
             backdrop-filter: blur(10px);
             border: 1px solid var(--panel-border);
-            padding: 14px 20px;
             border-radius: 12px;
-            max-width: 500px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            padding: 14px 18px;
+            z-index: 1000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-        .active-event-banner h2 {
-            font-size: 1rem;
-            font-weight: 700;
+        .active-banner h2 {
+            font-size: 1.05rem;
             color: var(--accent);
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .active-event-banner p {
+        .active-banner p {
             font-size: 0.82rem;
-            color: #cbd5e1;
+            color: var(--text-muted);
             margin-top: 4px;
         }
 
-        /* Custom Leaflet Marker Styling */
+        .map-toolbar {
+            position: absolute;
+            bottom: 30px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .tool-btn {
+            padding: 10px 18px;
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            color: #fff;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.2s;
+        }
+
+        .tool-btn:hover {
+            transform: translateY(-2px);
+            background: #334155;
+        }
+
+        .btn-save {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-save:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-clear {
+            background: #ef4444;
+            border-color: #ef4444;
+        }
+
+        .btn-clear:hover {
+            background: #dc2626;
+        }
+
+        /* Waypoint Chips Drawer */
+        .waypoints-drawer {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            background: rgba(30, 41, 59, 0.92);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--panel-border);
+            border-radius: 12px;
+            padding: 10px 15px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 60%;
+            overflow-x: auto;
+        }
+
+        .waypoint-chip {
+            background: #0f172a;
+            border: 1px solid var(--panel-border);
+            border-radius: 16px;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .waypoint-chip .num {
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        .btn-del-wp {
+            cursor: pointer;
+            color: #ef4444;
+        }
+
+        /* Custom Markers */
         .custom-waypoint-marker {
             background: var(--accent);
             color: #000;
             border: 2px solid #fff;
-            font-weight: 700;
-            font-size: 0.85rem;
             border-radius: 50%;
+            font-weight: 800;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
-        /* Waypoints Drawer at bottom of map */
-        .waypoints-drawer {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(30, 41, 59, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--panel-border);
-            border-radius: 12px;
-            padding: 12px 18px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            overflow-x: auto;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
-        }
-
-        .waypoint-chip {
-            background: #0f172a;
-            border: 1px solid var(--panel-border);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
-        }
-
-        .waypoint-chip span.num {
-            background: var(--accent);
-            color: #000;
-            width: 20px;
-            height: 20px;
+        .custom-fixed-marker {
+            background: var(--primary);
+            color: #fff;
+            border: 2px solid #fff;
             border-radius: 50%;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: all 0.2s;
         }
 
-        .waypoint-chip .btn-del-wp {
-            cursor: pointer;
-            color: #ef4444;
-            margin-left: 4px;
+        .custom-fixed-marker.selected {
+            background: var(--accent);
+            color: #000;
+            border-color: #fff;
+            transform: scale(1.3);
+            z-index: 10000 !important;
         }
 
+        /* Toast */
         .toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             background: var(--success);
             color: #000;
             font-weight: 700;
             padding: 12px 24px;
-            border-radius: 10px;
+            border-radius: 30px;
+            z-index: 2000;
             box-shadow: 0 10px 25px rgba(0,0,0,0.4);
             display: none;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Sidebar -->
+    <!-- Sidebar Panel -->
     <div class="sidebar">
         <div class="sidebar-header">
-            <h1><i class="fa-solid fa-map-location-dot"></i> Configurador d'Itineraris</h1>
-            <p>Santa Tecla 2026 — Fes clic sobre un acte per editar la seva ruta al mapa.</p>
+            <h1><i class="fa-solid fa-map-location-dot"></i> Gestor de Geolocalització</h1>
+            <p>Configura itineraris i ajusta punts fixos de Santa Tecla 2026</p>
             <div class="stats-bar">
-                <span>Estat global d'itineraris:</span>
-                <span class="stats-badge" id="statsBadge">0 / 0</span>
+                <span>Estat del repositori:</span>
+                <span class="stats-badge" id="statsBadge">Carregant...</span>
             </div>
         </div>
 
+        <!-- Section Switcher Tabs -->
+        <div class="section-tabs">
+            <button class="tab-btn active" id="tabRoutes" onclick="switchSection('routes')">
+                <i class="fa-solid fa-route"></i> 1. Itineraris (Rutes)
+            </button>
+            <button class="tab-btn" id="tabPoints" onclick="switchSection('points')">
+                <i class="fa-solid fa-location-dot"></i> 2. Ubicacions Fixes
+            </button>
+        </div>
+
+        <!-- Filter Box -->
         <div class="filter-box">
-            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Cerca per títol o carrer..." oninput="renderEventsList()">
-            <div class="filter-buttons">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Cerca per títol, espai o descripció..." oninput="renderCurrentSectionList()">
+            <div class="filter-buttons" id="routesFilters">
                 <button class="btn-filter active" onclick="setFilter('all', this)">Tots</button>
-                <button class="btn-filter" onclick="setFilter('configured', this)">✅ Configurats</button>
-                <button class="btn-filter" onclick="setFilter('pending', this)">⏳ Pendents</button>
+                <button class="btn-filter" onclick="setFilter('configured', this)">Configurats</button>
+                <button class="btn-filter" onclick="setFilter('pending', this)">Pendents</button>
+            </div>
+            <div id="pointsHeader" style="display: none;">
+                <button class="btn-add-new" onclick="createNewFixedLocation()"><i class="fa-solid fa-plus"></i> Nova Ubicació Fixa</button>
             </div>
         </div>
 
-        <div class="events-list" id="eventsList">
-            <!-- Dynamic events rendering -->
+        <!-- Items List -->
+        <div class="list-container" id="itemsList"></div>
+
+        <!-- Fixed Location Form (Visible only in points section) -->
+        <div class="location-editor-panel" id="fixedLocPanel" style="display: none;">
+            <div class="form-group">
+                <label>Identificador Unic (ID):</label>
+                <input type="text" id="locIdInput" placeholder="Ex: placa_font" onchange="updateSelectedLocFromInputs()">
+            </div>
+            <div class="form-group">
+                <label>Nom de l'Espai:</label>
+                <input type="text" id="locNameInput" placeholder="Ex: Plaça de la Font" onchange="updateSelectedLocFromInputs()">
+            </div>
+            <div class="form-group">
+                <label>Adreça Oficial:</label>
+                <input type="text" id="locAddressInput" placeholder="Ex: Plaça de la Font, Tarragona" onchange="updateSelectedLocFromInputs()">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Latitud:</label>
+                    <input type="number" step="any" id="locLatInput" placeholder="41.117" onchange="updateSelectedLocFromInputs()">
+                </div>
+                <div class="form-group">
+                    <label>Longitud:</label>
+                    <input type="number" step="any" id="locLngInput" placeholder="1.255" onchange="updateSelectedLocFromInputs()">
+                </div>
+            </div>
+            <button class="tool-btn btn-save" style="width: 100%; margin-top: 8px; justify-content: center; padding: 12px;" onclick="saveCurrentSelection()">
+                <i class="fa-solid fa-floppy-disk"></i> Guardar Ubicació a locations.json
+            </button>
         </div>
     </div>
 
-    <!-- Map Area -->
+    <!-- Map Workspace -->
     <div class="map-container">
         <div id="map"></div>
 
-        <!-- Banner for selected event -->
-        <div class="active-event-banner" id="activeBanner" style="display: none;">
-            <h2 id="bannerTitle"><i class="fa-solid fa-route"></i> Selecciona un acte</h2>
-            <p id="bannerDesc">Fes clic sobre quablessevol punt del mapa per anar afegint els punts del recorregut en ordre.</p>
+        <!-- Active Event Banner -->
+        <div class="active-banner" id="activeBanner" style="display: none;">
+            <h2 id="bannerTitle"><i class="fa-solid fa-route"></i> Selecciona un element</h2>
+            <p id="bannerDesc">Fes clic sobre el mapa per afegir punts de ruta o arrossega el marcador per ajustar la posició exacta.</p>
         </div>
 
-        <!-- Floating Action Toolbar -->
+        <!-- Map Toolbar -->
         <div class="map-toolbar" id="mapToolbar" style="display: none;">
-            <button class="tool-btn btn-clear" onclick="clearCurrentRoute()"><i class="fa-solid fa-trash-can"></i> Esborrar Punts</button>
-            <button class="tool-btn" onclick="undoLastPoint()"><i class="fa-solid fa-rotate-left"></i> Desfer darrer</button>
-            <button class="tool-btn btn-save" onclick="saveCurrentRoute()"><i class="fa-solid fa-floppy-disk"></i> Guardar Itinerari</button>
+            <button class="tool-btn btn-clear" id="btnClearRoute" onclick="clearCurrentRoute()"><i class="fa-solid fa-trash-can"></i> Esborrar Punts</button>
+            <button class="tool-btn" id="btnUndoPoint" onclick="undoLastPoint()"><i class="fa-solid fa-rotate-left"></i> Desfer darrer</button>
+            <button class="tool-btn btn-save" id="btnSave" onclick="saveCurrentSelection()"><i class="fa-solid fa-floppy-disk"></i> Guardar Canvis</button>
         </div>
 
-        <!-- Waypoints Chip Drawer -->
+        <!-- Waypoints Chips Drawer -->
         <div class="waypoints-drawer" id="waypointsDrawer" style="display: none;">
             <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);"><i class="fa-solid fa-list-ol"></i> Punts:</span>
             <div id="waypointsChips" style="display: flex; gap: 8px;"></div>
@@ -470,136 +573,182 @@
     </div>
 
     <!-- Toast Notification -->
-    <div class="toast" id="toast">✅ Itinerari guardat amb èxit!</div>
+    <div class="toast" id="toast">✅ Guardat amb èxit!</div>
 
-    <!-- Leaflet JS -->
+    <!-- Leaflet JS & Data Sources -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="data/locations.js"></script>
     <script src="data/program.js"></script>
 
     <script>
         let map;
-        let events = window.PROGRAM_DATA || [];
-        let currentEvent = null;
-        let currentWaypoints = []; // Array of { lat, lng, name }
+        let events = [];
+        let locations = {};
+        
+        let currentMode = 'routes'; // 'routes' or 'points'
+        let selectedItem = null; // selected event or location
+        
+        // Waypoint state for routes
+        let currentWaypoints = [];
         let currentPolyline = null;
         let currentMarkers = [];
         let activeFilter = 'all';
 
+        // All fixed markers on map in Points mode
+        let allFixedMarkers = [];
+        let singlePointMarker = null;
+
         // Initialize App
         document.addEventListener('DOMContentLoaded', () => {
+            events = window.eventsData || [];
+            locations = window.locationsData || {};
+
             initMap();
-            renderEventsList();
             updateStats();
+            renderCurrentSectionList();
         });
 
         function initMap() {
-            // Tarragona Center
-            map = L.map('map', {
-                zoomControl: false
-            }).setView([41.1175, 1.2555], 15);
+            map = L.map('map', { zoomControl: false }).setView([41.1175, 1.2555], 15);
 
             L.control.zoom({ position: 'topright' }).addTo(map);
 
-            // Dark CartoDB Tiles
             L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
                 attribution: '&copy; OpenStreetMap &copy; CARTO',
                 subdomains: 'abcd',
                 maxZoom: 19
             }).addTo(map);
 
-            // Map Click Event to Add Waypoints
+            // Click listener
             map.on('click', (e) => {
-                if (!currentEvent) {
-                    alert("Si us plau, selecciona primer un acte de la llista esquerra per editar la seva ruta.");
-                    return;
+                if (!selectedItem) return;
+
+                if (currentMode === 'routes') {
+                    addWaypoint(e.latlng.lat, e.latlng.lng);
+                } else if (currentMode === 'points') {
+                    updateSinglePointPos(e.latlng.lat, e.latlng.lng);
                 }
-                const lat = e.latlng.lat;
-                const lng = e.latlng.lng;
-                addWaypoint(lat, lng);
             });
         }
 
+        function switchSection(mode) {
+            currentMode = mode;
+            selectedItem = null;
+            clearMapGraphics();
+
+            document.getElementById('tabRoutes').classList.toggle('active', mode === 'routes');
+            document.getElementById('tabPoints').classList.toggle('active', mode === 'points');
+            document.getElementById('routesFilters').style.display = (mode === 'routes') ? 'flex' : 'none';
+            document.getElementById('pointsHeader').style.display = (mode === 'points') ? 'block' : 'none';
+            document.getElementById('fixedLocPanel').style.display = (mode === 'points') ? 'flex' : 'none';
+
+            document.getElementById('activeBanner').style.display = 'none';
+            document.getElementById('mapToolbar').style.display = 'none';
+            document.getElementById('waypointsDrawer').style.display = 'none';
+
+            updateStats();
+            renderCurrentSectionList();
+
+            if (mode === 'points') {
+                renderAllFixedLocationMarkersOnMap();
+            }
+        }
+
         function updateStats() {
-            const totalWithRoute = events.filter(e => e.route_info && e.route_info.description).length;
-            const configuredCount = events.filter(e => e.route_info && e.route_info.is_configured && e.route_info.is_manual).length;
-            document.getElementById('statsBadge').innerText = `${configuredCount} / ${totalWithRoute} configurats manualment`;
+            if (currentMode === 'routes') {
+                const routeLocs = Object.values(locations).filter(l => l.route_info || l.type === 'route');
+                const configuredCount = routeLocs.filter(l => l.route_info && l.route_info.is_configured).length;
+                document.getElementById('statsBadge').innerText = `${configuredCount} / ${routeLocs.length} rutes configurades`;
+            } else {
+                const fixedLocs = Object.values(locations).filter(l => !l.route_info && l.type !== 'route');
+                document.getElementById('statsBadge').innerText = `${fixedLocs.length} ubicacions fixes enregistrades`;
+            }
         }
 
         function setFilter(filter, btn) {
             activeFilter = filter;
             document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            renderEventsList();
+            renderCurrentSectionList();
         }
 
-        function renderEventsList() {
-            const listEl = document.getElementById('eventsList');
+        function renderCurrentSectionList() {
+            const listEl = document.getElementById('itemsList');
             const search = document.getElementById('searchInput').value.toLowerCase();
-
             listEl.innerHTML = '';
 
-            const filtered = events.filter(e => {
-                if (!e.route_info || !e.route_info.description) return false;
-                const matchesSearch = e.title.toLowerCase().includes(search) || 
-                                      e.route_info.description.toLowerCase().includes(search) ||
-                                      (e.date && e.date.toLowerCase().includes(search));
-                
-                const isConfigured = !!(e.route_info.is_configured && e.route_info.is_manual);
+            if (currentMode === 'routes') {
+                renderRoutesList(listEl, search);
+            } else {
+                renderPointsList(listEl, search);
+            }
+        }
+
+        // --- SECTION 1: ROUTES ---
+        function renderRoutesList(listEl, search) {
+            const routeEvents = events.filter(e => {
+                const loc = locations[e.location_id];
+                const rInfo = (loc && loc.route_info) || e.route_info;
+                if (!rInfo) return false;
+
+                const matchesSearch = e.title.toLowerCase().includes(search) ||
+                                      (rInfo.description && rInfo.description.toLowerCase().includes(search)) ||
+                                      (loc && loc.name && loc.name.toLowerCase().includes(search));
+
+                const isConfigured = !!(rInfo.is_configured);
                 if (activeFilter === 'configured' && !isConfigured) return false;
                 if (activeFilter === 'pending' && isConfigured) return false;
 
                 return matchesSearch;
             });
 
-            filtered.forEach(ev => {
-                const card = document.createElement('div');
-                const isConfigured = !!(ev.route_info.is_configured && ev.route_info.is_manual);
-                const isSelected = currentEvent && currentEvent.id === ev.id;
+            routeEvents.forEach(ev => {
+                const loc = locations[ev.location_id];
+                const rInfo = (loc && loc.route_info) || ev.route_info;
+                const isConfigured = !!(rInfo && rInfo.is_configured);
+                const isSelected = selectedItem && selectedItem.id === ev.id;
 
-                card.className = `event-card ${isSelected ? 'selected' : ''}`;
-                card.onclick = () => selectEvent(ev);
+                const card = document.createElement('div');
+                card.className = `item-card ${isSelected ? 'selected' : ''}`;
+                card.onclick = () => selectRouteEvent(ev, loc, rInfo);
 
                 card.innerHTML = `
-                    <div class="event-card-header">
-                        <div class="event-title">${ev.title}</div>
-                        <div class="status-check ${isConfigured ? 'configured' : 'pending'}" title="${isConfigured ? 'Itinerari configurat' : 'Pendent de configurar'}">
-                            ${isConfigured ? '<i class="fa-solid fa-check"></i>' : '<i class="fa-solid fa-clock"></i>'}
-                        </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div class="item-title">${ev.title}</div>
+                        <span style="font-size:0.8rem;">${isConfigured ? '✅' : '⏳'}</span>
                     </div>
-                    <div class="event-meta">
-                        <span>📅 ${ev.date || 'Santa Tecla'}</span>
-                        <span>🕒 ${ev.time || ''}</span>
+                    <div class="item-meta">
+                        <span>📍 ${loc ? loc.name : ev.location_id}</span>
+                        <span>📅 ${ev.date || ''}</span>
                     </div>
-                    <div class="event-desc">${ev.route_info.description}</div>
+                    <div class="item-desc">${rInfo ? rInfo.description || '' : ''}</div>
                 `;
-
                 listEl.appendChild(card);
             });
         }
 
-        function selectEvent(ev) {
-            currentEvent = ev;
-            renderEventsList(); // Update selected card UI
+        function selectRouteEvent(ev, loc, rInfo) {
+            selectedItem = { event: ev, location: loc, routeInfo: rInfo, id: ev.id };
+            renderCurrentSectionList();
 
             document.getElementById('activeBanner').style.display = 'block';
             document.getElementById('mapToolbar').style.display = 'flex';
             document.getElementById('waypointsDrawer').style.display = 'flex';
+            document.getElementById('btnClearRoute').style.display = 'inline-flex';
+            document.getElementById('btnUndoPoint').style.display = 'inline-flex';
 
             document.getElementById('bannerTitle').innerHTML = `<i class="fa-solid fa-route"></i> ${ev.title}`;
-            document.getElementById('bannerDesc').innerText = ev.route_info.description;
+            document.getElementById('bannerDesc').innerText = rInfo ? (rInfo.description || "Configura el traçat d'aquest itinerari fent clics sobre el mapa.") : "";
 
-            // Load existing waypoints if any
+            // Load waypoints
             currentWaypoints = [];
-            if (ev.route_info && ev.route_info.waypoints && ev.route_info.waypoints.length > 0) {
-                ev.route_info.waypoints.forEach(wp => {
-                    if (wp.lat && wp.lng) {
-                        currentWaypoints.push({ lat: wp.lat, lng: wp.lng, name: wp.name || `Punt ${currentWaypoints.length + 1}` });
-                    }
+            if (rInfo && rInfo.waypoints && rInfo.waypoints.length > 0) {
+                rInfo.waypoints.forEach(wp => {
+                    currentWaypoints.push({ lat: wp.lat, lng: wp.lng, name: wp.name || `Punt ${currentWaypoints.length + 1}` });
                 });
-            } else if (ev.route_info && ev.route_info.coordinates && ev.route_info.coordinates.length > 0) {
-                // Fallback to coordinates
-                ev.route_info.coordinates.forEach((c, idx) => {
-                    if (idx % 10 === 0 || idx === ev.route_info.coordinates.length - 1) {
+            } else if (rInfo && rInfo.coordinates && rInfo.coordinates.length > 0) {
+                rInfo.coordinates.forEach((c, idx) => {
+                    if (idx % 10 === 0 || idx === rInfo.coordinates.length - 1) {
                         currentWaypoints.push({ lat: c[0], lng: c[1], name: `Punt ${currentWaypoints.length + 1}` });
                     }
                 });
@@ -609,15 +758,143 @@
 
             if (currentWaypoints.length > 0) {
                 map.fitBounds(L.polyline(currentWaypoints.map(w => [w.lat, w.lng])).getBounds().pad(0.2));
+            } else if (loc && loc.lat && loc.lng) {
+                map.setView([loc.lat, loc.lng], 16);
             }
         }
 
-        function addWaypoint(lat, lng) {
-            currentWaypoints.push({
-                lat: lat,
-                lng: lng,
-                name: `Punt ${currentWaypoints.length + 1}`
+        // --- SECTION 2: FIXED POINTS ---
+        function renderPointsList(listEl, search) {
+            const fixedLocs = Object.values(locations).filter(l => {
+                if (l.route_info || l.type === 'route') return false;
+                const matchesSearch = (l.name && l.name.toLowerCase().includes(search)) ||
+                                      (l.address && l.address.toLowerCase().includes(search)) ||
+                                      l.id.toLowerCase().includes(search);
+                return matchesSearch;
             });
+
+            fixedLocs.forEach(loc => {
+                const isSelected = selectedItem && selectedItem.id === loc.id;
+                const card = document.createElement('div');
+                card.className = `item-card ${isSelected ? 'selected' : ''}`;
+                card.onclick = () => selectFixedPoint(loc);
+
+                card.innerHTML = `
+                    <div class="item-title">📍 ${loc.name || loc.id}</div>
+                    <div class="item-desc">${loc.address || 'Sense adreça'}</div>
+                    <div class="item-meta" style="margin-top:4px;">
+                        <span>ID: ${loc.id}</span>
+                        <span>GPS: ${loc.lat ? loc.lat.toFixed(5) : '?'}, ${loc.lng ? loc.lng.toFixed(5) : '?'}</span>
+                    </div>
+                `;
+                listEl.appendChild(card);
+            });
+        }
+
+        function createNewFixedLocation() {
+            const newId = "nova_ubicacio_" + Date.now().toString().slice(-4);
+            const newLoc = {
+                id: newId,
+                name: "Nova Ubicació",
+                address: "Tarragona",
+                lat: 41.1175,
+                lng: 1.2530
+            };
+            locations[newId] = newLoc;
+            selectFixedPoint(newLoc);
+            renderCurrentSectionList();
+        }
+
+        function selectFixedPoint(loc) {
+            selectedItem = loc;
+            renderCurrentSectionList();
+
+            document.getElementById('activeBanner').style.display = 'block';
+            document.getElementById('mapToolbar').style.display = 'flex';
+            document.getElementById('waypointsDrawer').style.display = 'none';
+            document.getElementById('btnClearRoute').style.display = 'none';
+            document.getElementById('btnUndoPoint').style.display = 'none';
+
+            document.getElementById('bannerTitle').innerHTML = `<i class="fa-solid fa-location-dot"></i> ${loc.name || loc.id}`;
+            document.getElementById('bannerDesc').innerText = `Fes clic sobre el mapa o arrossega el pin destacat per canviar les coordenades de "${loc.name}".`;
+
+            // Fill form
+            document.getElementById('locIdInput').value = loc.id || '';
+            document.getElementById('locNameInput').value = loc.name || '';
+            document.getElementById('locAddressInput').value = loc.address || '';
+            document.getElementById('locLatInput').value = loc.lat || 41.1175;
+            document.getElementById('locLngInput').value = loc.lng || 1.253;
+
+            renderAllFixedLocationMarkersOnMap();
+
+            const lat = loc.lat || 41.1175;
+            const lng = loc.lng || 1.253;
+            map.setView([lat, lng], 17);
+        }
+
+        function updateSelectedLocFromInputs() {
+            if (!selectedItem || currentMode !== 'points') return;
+            selectedItem.name = document.getElementById('locNameInput').value;
+            selectedItem.address = document.getElementById('locAddressInput').value;
+            selectedItem.lat = parseFloat(document.getElementById('locLatInput').value) || selectedItem.lat;
+            selectedItem.lng = parseFloat(document.getElementById('locLngInput').value) || selectedItem.lng;
+
+            renderAllFixedLocationMarkersOnMap();
+        }
+
+        function renderAllFixedLocationMarkersOnMap() {
+            clearMapGraphics();
+
+            const fixedLocs = Object.values(locations).filter(l => !l.route_info && l.type !== 'route');
+
+            fixedLocs.forEach(loc => {
+                if (!loc.lat || !loc.lng) return;
+
+                const isSelected = selectedItem && selectedItem.id === loc.id;
+                const icon = L.divIcon({
+                    className: isSelected ? 'custom-fixed-marker selected' : 'custom-fixed-marker',
+                    html: '<i class="fa-solid fa-location-dot"></i>',
+                    iconSize: isSelected ? [34, 34] : [24, 24],
+                    iconAnchor: isSelected ? [17, 17] : [12, 12]
+                });
+
+                const marker = L.marker([loc.lat, loc.lng], {
+                    icon: icon,
+                    draggable: isSelected
+                }).addTo(map);
+
+                marker.on('click', (e) => {
+                    L.DomEvent.stopPropagation(e);
+                    selectFixedPoint(loc);
+                });
+
+                if (isSelected) {
+                    marker.on('dragend', (e) => {
+                        const pos = e.target.getLatLng();
+                        updateSinglePointPos(pos.lat, pos.lng);
+                    });
+                    singlePointMarker = marker;
+                }
+
+                allFixedMarkers.push(marker);
+            });
+        }
+
+        function updateSinglePointPos(lat, lng) {
+            if (!selectedItem || currentMode !== 'points') return;
+
+            document.getElementById('locLatInput').value = lat.toFixed(6);
+            document.getElementById('locLngInput').value = lng.toFixed(6);
+
+            selectedItem.lat = lat;
+            selectedItem.lng = lng;
+
+            renderAllFixedLocationMarkersOnMap();
+        }
+
+        // --- MAP ROUTE DRAWING LOGIC ---
+        function addWaypoint(lat, lng) {
+            currentWaypoints.push({ lat: lat, lng: lng, name: `Punt ${currentWaypoints.length + 1}` });
             redrawMapRoute();
         }
 
@@ -629,7 +906,7 @@
         }
 
         function clearCurrentRoute() {
-            if (confirm("Segur que vols esborrar tots els punts marcats per a aquest acte?")) {
+            if (confirm("Segur que vols esborrar tots els punts de la ruta?")) {
                 currentWaypoints = [];
                 redrawMapRoute();
             }
@@ -641,7 +918,6 @@
         }
 
         function redrawMapRoute() {
-            // Clear existing markers and polyline
             currentMarkers.forEach(m => map.removeLayer(m));
             currentMarkers = [];
             if (currentPolyline) map.removeLayer(currentPolyline);
@@ -651,16 +927,9 @@
                 return;
             }
 
-            // Draw Polyline
             const latLngs = currentWaypoints.map(w => [w.lat, w.lng]);
-            currentPolyline = L.polyline(latLngs, {
-                color: '#f59e0b',
-                weight: 5,
-                opacity: 0.9,
-                dashArray: '8, 8'
-            }).addTo(map);
+            currentPolyline = L.polyline(latLngs, { color: '#f59e0b', weight: 5, opacity: 0.9, dashArray: '8, 8' }).addTo(map);
 
-            // Draw Markers
             currentWaypoints.forEach((wp, idx) => {
                 const markerIcon = L.divIcon({
                     className: 'custom-waypoint-marker',
@@ -669,10 +938,7 @@
                     iconAnchor: [14, 14]
                 });
 
-                const marker = L.marker([wp.lat, wp.lng], {
-                    icon: markerIcon,
-                    draggable: true
-                }).addTo(map);
+                const marker = L.marker([wp.lat, wp.lng], { icon: markerIcon, draggable: true }).addTo(map);
 
                 marker.on('dragend', (e) => {
                     const newPos = e.target.getLatLng();
@@ -702,14 +968,33 @@
             });
         }
 
-        async function saveCurrentRoute() {
-            if (!currentEvent) return;
+        function clearMapGraphics() {
+            currentMarkers.forEach(m => map.removeLayer(m));
+            currentMarkers = [];
+            allFixedMarkers.forEach(m => map.removeLayer(m));
+            allFixedMarkers = [];
+            if (currentPolyline) map.removeLayer(currentPolyline);
+            if (singlePointMarker) map.removeLayer(singlePointMarker);
+            currentWaypoints = [];
+        }
+
+        // --- SAVE CONTROLLER ---
+        async function saveCurrentSelection() {
+            if (!selectedItem) return;
+
+            if (currentMode === 'routes') {
+                await saveRoute();
+            } else {
+                await saveFixedLocation();
+            }
+        }
+
+        async function saveRoute() {
             if (currentWaypoints.length < 2) {
                 alert("Cal marcar almenys 2 punts sobre el mapa per formar una ruta.");
                 return;
             }
 
-            // Interpolate dense coordinates between waypoints for smooth polyline
             const coordinates = [];
             for (let i = 0; i < currentWaypoints.length - 1; i++) {
                 const p1 = currentWaypoints[i];
@@ -727,41 +1012,67 @@
             }
 
             const payload = {
-                id: currentEvent.id,
+                location_id: selectedItem.location ? selectedItem.location.id : selectedItem.event.location_id,
                 waypoints: currentWaypoints,
-                coordinates: coordinates,
-                is_configured: true,
-                is_manual: true
+                coordinates: coordinates
             };
 
-            const endpoint = (window.location.protocol.startsWith('http')) 
-                ? '/api/save-route' 
-                : 'http://localhost:8080/api/save-route';
-
             try {
-                const resp = await fetch(endpoint, {
+                const resp = await fetch('/api/save-route', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-
                 const res = await resp.json();
                 if (res.success) {
-                    currentEvent.route_info.waypoints = currentWaypoints;
-                    currentEvent.route_info.coordinates = coordinates;
-                    currentEvent.route_info.is_configured = true;
-                    currentEvent.route_info.is_manual = true;
-                    currentEvent.route_info.has_route = true;
-
-                    updateStats();
-                    renderEventsList();
-                    showToast("✅ Itinerari guardat i marcat com a configurat!");
+                    showToast("✅ Itinerari guardat amb èxit a locations.json!");
                 } else {
-                    alert("Error en guardar la ruta: " + (res.message || "Error desconegut"));
+                    alert("Error: " + res.message);
                 }
             } catch (err) {
-                console.error(err);
-                alert("Error de connexió en guardar la ruta.");
+                console.warn("API server no actiu. Mostrant dades JSON actualitzades:", err);
+                prompt("Copia el JSON actualitzat per desat manual a locations.json:", JSON.stringify(payload, null, 2));
+            }
+        }
+
+        async function saveFixedLocation() {
+            const id = document.getElementById('locIdInput').value || selectedItem.id;
+            const name = document.getElementById('locNameInput').value;
+            const address = document.getElementById('locAddressInput').value;
+            const lat = parseFloat(document.getElementById('locLatInput').value);
+            const lng = parseFloat(document.getElementById('locLngInput').value);
+
+            const payload = {
+                id: id,
+                name: name,
+                address: address,
+                lat: lat,
+                lng: lng
+            };
+
+            try {
+                const resp = await fetch('/api/save-location', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const res = await resp.json();
+                if (res.success) {
+                    if (!locations[id]) locations[id] = {};
+                    locations[id].id = id;
+                    locations[id].name = name;
+                    locations[id].address = address;
+                    locations[id].lat = lat;
+                    locations[id].lng = lng;
+
+                    renderCurrentSectionList();
+                    showToast("✅ Ubicació guardada amb èxit a locations.json!");
+                } else {
+                    alert("Error: " + res.message);
+                }
+            } catch (err) {
+                console.warn("API server no actiu:", err);
+                prompt("Copia el JSON de la ubicació actualitzada:", JSON.stringify(payload, null, 2));
             }
         }
 
@@ -769,9 +1080,7 @@
             const toast = document.getElementById('toast');
             toast.innerText = msg;
             toast.style.display = 'block';
-            setTimeout(() => {
-                toast.style.display = 'none';
-            }, 3000);
+            setTimeout(() => { toast.style.display = 'none'; }, 3000);
         }
     </script>
 </body>

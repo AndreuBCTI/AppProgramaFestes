@@ -132,8 +132,8 @@
     "id": "balco",
     "name": "Balcó del Mediterrani",
     "address": "Balcó del Mediterrani, 43003 Tarragona",
-    "lat": 41.1145,
-    "lng": 1.2576,
+    "lat": 41.114102,
+    "lng": 1.257294,
     "keywords": [
       "balcó del mediterrani",
       "balco del mediterrani"
@@ -143,8 +143,8 @@
     "id": "campmart",
     "name": "Jardins del Camp de Mart",
     "address": "Avinguda de Catalunya, 43002 Tarragona",
-    "lat": 41.1201,
-    "lng": 1.2542,
+    "lat": 41.119713,
+    "lng": 1.255289,
     "keywords": [
       "camp de mart"
     ]
@@ -175,8 +175,8 @@
     "id": "amfiteatre",
     "name": "Amfiteatre Romà",
     "address": "Parc de l'Amfiteatre, 43003 Tarragona",
-    "lat": 41.1147,
-    "lng": 1.2575,
+    "lat": 41.114864,
+    "lng": 1.258228,
     "keywords": [
       "amfiteatre"
     ]
@@ -185,8 +185,8 @@
     "id": "muralles",
     "name": "Passeig Arqueològic (Muralles)",
     "address": "Avinguda de Catalunya, 2, 43002 Tarragona",
-    "lat": 41.118552,
-    "lng": 1.254895,
+    "lat": 41.118703,
+    "lng": 1.25496,
     "keywords": [
       "muralles",
       "passeig arqueològic",
@@ -197,8 +197,8 @@
     "id": "canals",
     "name": "Casa Canals",
     "address": "Carrer d'en Granada, 11, 43003 Tarragona",
-    "lat": 41.1189,
-    "lng": 1.2585,
+    "lat": 41.118284,
+    "lng": 1.260158,
     "keywords": [
       "casa canals",
       "canals"
@@ -218,8 +218,8 @@
     "id": "teatretgn",
     "name": "Teatre Tarragona",
     "address": "Rambla Nova, 11, 43003 Tarragona",
-    "lat": 41.11453,
-    "lng": 1.255905,
+    "lat": 41.114312,
+    "lng": 1.255779,
     "keywords": [
       "teatre tarragona"
     ]
@@ -228,8 +228,8 @@
     "id": "metropol",
     "name": "Teatre Metropol",
     "address": "Rambla Nova, 46, 43003 Tarragona",
-    "lat": 41.1155,
-    "lng": 1.2538,
+    "lat": 41.114907,
+    "lng": 1.253633,
     "keywords": [
       "metropol"
     ]
@@ -238,8 +238,8 @@
     "id": "anticajuntament",
     "name": "Centre Cultural Antic Ajuntament",
     "address": "Carrer Major, 41, 43003 Tarragona",
-    "lat": 41.11717,
-    "lng": 1.25626,
+    "lat": 41.118168,
+    "lng": 1.257347,
     "keywords": [
       "antic ajuntament",
       "carrer major, 41",
@@ -250,8 +250,8 @@
     "id": "espaiturisme",
     "name": "Espai Turisme",
     "address": "Carrer Major, 37, 43003 Tarragona",
-    "lat": 41.1176,
-    "lng": 1.2568,
+    "lat": 41.118153,
+    "lng": 1.257356,
     "keywords": [
       "espai turisme",
       "carrer major, 37",
@@ -273,8 +273,8 @@
     "id": "plaseu",
     "name": "Pla de la Seu (Catedral)",
     "address": "Pla de la Seu, 43003 Tarragona",
-    "lat": 41.118631,
-    "lng": 1.257799,
+    "lat": 41.118677,
+    "lng": 1.257751,
     "keywords": [
       "pla de la seu",
       "seu",
@@ -285,8 +285,8 @@
     "id": "rbalco",
     "name": "Rambla Nova (tram Balcó)",
     "address": "Rambla Nova, 43003 Tarragona",
-    "lat": 41.1152,
-    "lng": 1.2558,
+    "lat": 41.114292,
+    "lng": 1.255389,
     "keywords": [
       "tram balcó",
       "tram balco"
@@ -296,8 +296,8 @@
     "id": "rbanc",
     "name": "Rambla Nova (Banc d'Espanya)",
     "address": "Rambla Nova, 43003 Tarragona",
-    "lat": 41.116,
-    "lng": 1.253,
+    "lat": 41.116881,
+    "lng": 1.249914,
     "keywords": [
       "banc d'espanya",
       "banc de espanya"
@@ -307,8 +307,8 @@
     "id": "rteresies",
     "name": "Rambla Nova (Teresianes)",
     "address": "Rambla Nova, 43001 Tarragona",
-    "lat": 41.1168,
-    "lng": 1.2499,
+    "lat": 41.116252,
+    "lng": 1.25134,
     "keywords": [
       "teresianes"
     ]
@@ -317,8 +317,8 @@
     "id": "ramblanova",
     "name": "Rambla Nova",
     "address": "Rambla Nova, 43003 Tarragona",
-    "lat": 41.1162,
-    "lng": 1.2525,
+    "lat": 41.114854,
+    "lng": 1.254223,
     "keywords": [
       "rambla nova"
     ]
@@ -327,8 +327,8 @@
     "id": "tabacalera",
     "name": "Espai Tabacalera (L'Arxiu M2)",
     "address": "Avinguda Vidal i Barraquer, 43005 Tarragona",
-    "lat": 41.1158,
-    "lng": 1.2372,
+    "lat": 41.114722,
+    "lng": 1.240416,
     "keywords": [
       "tabacalera",
       "l'arxiu",
@@ -339,8 +339,8 @@
     "id": "cntarraco",
     "name": "Club Natació Tàrraco",
     "address": "Passeig de Torroja, 86, 43007 Tarragona",
-    "lat": 41.1213,
-    "lng": 1.2568,
+    "lat": 41.119448,
+    "lng": 1.261277,
     "keywords": [
       "natació tàrraco",
       "club natació",
@@ -352,8 +352,8 @@
     "id": "biblioteca",
     "name": "Biblioteca Pública de Tarragona",
     "address": "Carrer de Fortuny, 30, 43001 Tarragona",
-    "lat": 41.1171,
-    "lng": 1.2491,
+    "lat": 41.113877,
+    "lng": 1.250012,
     "keywords": [
       "biblioteca pública",
       "biblioteca publica",
@@ -364,8 +364,8 @@
     "id": "tap",
     "name": "Tarraco Arena Plaça (TAP)",
     "address": "Carrer de Mallorca, 18, 43001 Tarragona",
-    "lat": 41.114423,
-    "lng": 1.245713,
+    "lat": 41.114434,
+    "lng": 1.245195,
     "keywords": [
       "tarraco arena",
       "tap"
@@ -375,8 +375,8 @@
     "id": "parccentral",
     "name": "Parc Central",
     "address": "Avinguda Vidal i Barraquer, 43005 Tarragona",
-    "lat": 41.1162,
-    "lng": 1.2388,
+    "lat": 41.117071,
+    "lng": 1.239192,
     "keywords": [
       "parc central"
     ]
@@ -385,8 +385,8 @@
     "id": "francoli",
     "name": "Parc del Francolí",
     "address": "Parc del Francolí, 43005 Tarragona",
-    "lat": 41.123434,
-    "lng": 1.234295,
+    "lat": 41.124568,
+    "lng": 1.233828,
     "keywords": [
       "francolí",
       "francoli"
@@ -406,8 +406,8 @@
     "id": "tinglado1",
     "name": "Tinglado 1 (Moll de Costa)",
     "address": "Moll de Costa, 43004 Tarragona",
-    "lat": 41.1086,
-    "lng": 1.2472,
+    "lat": 41.109356,
+    "lng": 1.247739,
     "keywords": [
       "tinglado"
     ]
@@ -416,8 +416,8 @@
     "id": "teclaponent",
     "name": "Bonavista / TeclaPonent",
     "address": "Rambla de Bonavista, 43006 Tarragona",
-    "lat": 41.1198,
-    "lng": 1.1992,
+    "lat": 41.119617,
+    "lng": 1.191869,
     "keywords": [
       "bonavista",
       "teclaponent"
@@ -427,8 +427,8 @@
     "id": "torreforta",
     "name": "Torreforta",
     "address": "Plaça del Mercat, Torreforta, 43006 Tarragona",
-    "lat": 41.1166,
-    "lng": 1.2185,
+    "lat": 41.119025,
+    "lng": 1.215921,
     "keywords": [
       "torreforta"
     ]
@@ -437,8 +437,8 @@
     "id": "santllorenc",
     "name": "Església de Sant Llorenç",
     "address": "Plaça de Sant Llorenç, 43003 Tarragona",
-    "lat": 41.1188,
-    "lng": 1.2572,
+    "lat": 41.119079,
+    "lng": 1.259528,
     "keywords": [
       "sant llorenç",
       "sant llorenc"
@@ -448,8 +448,8 @@
     "id": "oliva",
     "name": "Muntanyeta de l'Oliva",
     "address": "Muntanyeta de l'Oliva, 43007 Tarragona",
-    "lat": 41.127,
-    "lng": 1.2485,
+    "lat": 41.127725,
+    "lng": 1.252561,
     "keywords": [
       "oliva",
       "ràdioclub",
@@ -460,8 +460,8 @@
     "id": "santpere",
     "name": "Sant Pere i Sant Pau",
     "address": "Centre Cívic St Pere i St Pau, 43007 Tarragona",
-    "lat": 41.1378,
-    "lng": 1.2541,
+    "lat": 41.137706,
+    "lng": 1.251748,
     "keywords": [
       "sant pere i sant pau"
     ]
@@ -470,8 +470,8 @@
     "id": "santsalvador",
     "name": "Sant Salvador",
     "address": "Plaça de l'Església, Sant Salvador, 43007 Tarragona",
-    "lat": 41.1558,
-    "lng": 1.245,
+    "lat": 41.16228,
+    "lng": 1.24202,
     "keywords": [
       "sant salvador"
     ]
@@ -480,8 +480,8 @@
     "id": "riuclar",
     "name": "Riu Clar",
     "address": "Rambla de Riu Clar, 43006 Tarragona",
-    "lat": 41.1293,
-    "lng": 1.2114,
+    "lat": 41.139201,
+    "lng": 1.219688,
     "keywords": [
       "riu clar",
       "riuclar"
@@ -491,8 +491,8 @@
     "id": "floresta",
     "name": "La Floresta",
     "address": "Plaça de La Floresta, 43006 Tarragona",
-    "lat": 41.1275,
-    "lng": 1.2052,
+    "lat": 41.126612,
+    "lng": 1.213675,
     "keywords": [
       "la floresta",
       "floresta"
@@ -502,8 +502,8 @@
     "id": "escola_campclar",
     "name": "Escola Camp Clar",
     "address": "Carrer del Riu Llobregat, s/n, 43006 Tarragona",
-    "lat": 41.1206,
-    "lng": 1.2052,
+    "lat": 41.116064,
+    "lng": 1.21145,
     "keywords": [
       "escola camp clar",
       "camp clar"
@@ -513,8 +513,8 @@
     "id": "escola_pax",
     "name": "Escola Pax",
     "address": "Avinguda de les Comarques Catalanes, 14, 43007 Tarragona",
-    "lat": 41.1278,
-    "lng": 1.2575,
+    "lat": 41.125865,
+    "lng": 1.248776,
     "keywords": [
       "escola pax",
       "pax"
@@ -524,8 +524,8 @@
     "id": "escola_santrafael",
     "name": "CPEE Sant Rafael",
     "address": "Passeig de Torroja, s/n, 43007 Tarragona",
-    "lat": 41.1235,
-    "lng": 1.2612,
+    "lat": 41.128049,
+    "lng": 1.242446,
     "keywords": [
       "cpee sant rafael",
       "sant rafael"
@@ -535,8 +535,8 @@
     "id": "escola_santateresa",
     "name": "Col·legi Santa Teresa",
     "address": "Rambla Nova, 107, 43001 Tarragona",
-    "lat": 41.1165,
-    "lng": 1.2512,
+    "lat": 41.116431,
+    "lng": 1.251461,
     "keywords": [
       "teresianes",
       "santa teresa"
@@ -546,8 +546,8 @@
     "id": "escola_joanxxiii",
     "name": "Escola Joan XXIII",
     "address": "Carrer Deu, 1 (Bonavista), 43006 Tarragona",
-    "lat": 41.1158,
-    "lng": 1.1965,
+    "lat": 41.123395,
+    "lng": 1.193003,
     "keywords": [
       "escola joan xxiii",
       "joan xxiii"
@@ -557,8 +557,8 @@
     "id": "escola_vedruna",
     "name": "Col·legi Vedruna Sagrat Cor",
     "address": "Carrer de l'Àngel, 4, 43001 Tarragona",
-    "lat": 41.1158,
-    "lng": 1.2528,
+    "lat": 41.120865,
+    "lng": 1.248488,
     "keywords": [
       "vedruna",
       "sagrat cor"
@@ -568,8 +568,8 @@
     "id": "escola_joanroig",
     "name": "Col·legi Joan Roig",
     "address": "Carrer de Girona, 16, 43003 Tarragona",
-    "lat": 41.1168,
-    "lng": 1.2548,
+    "lat": 41.116238,
+    "lng": 1.2483,
     "keywords": [
       "joan roig",
       "col·legi joan roig"
@@ -579,8 +579,8 @@
     "id": "escola_miracle",
     "name": "Escola El Miracle",
     "address": "Passeig Marítim Rafael Casanova, s/n, 43003 Tarragona",
-    "lat": 41.1142,
-    "lng": 1.2615,
+    "lat": 41.115072,
+    "lng": 1.259909,
     "keywords": [
       "escola el miracle",
       "el miracle"
@@ -590,43 +590,43 @@
     "id": "salut",
     "name": "Ermita de la Salut",
     "address": "Ermita de la Salut, 43007 Tarragona",
-    "lat": 41.1308,
-    "lng": 1.2588
+    "lat": 41.124281,
+    "lng": 1.268167
   },
   "salazero": {
     "id": "salazero",
     "name": "Sala Zero",
     "address": "Carrer Sant Magí, 12, 43004 Tarragona",
-    "lat": 41.1147,
-    "lng": 1.2514
+    "lat": 41.11265,
+    "lng": 1.249449
   },
   "nastic": {
     "id": "nastic",
     "name": "Pavelló Club Gimnàstic de Tarragona",
     "address": "Camí de la Budellera, s/n, 43007 Tarragona",
-    "lat": 41.127,
-    "lng": 1.2735
+    "lat": 41.126188,
+    "lng": 1.27213
   },
   "torreforta_mercat": {
     "id": "torreforta_mercat",
     "name": "Mercat de Torreforta",
     "address": "Plaça Pilar Pradells, 43006 Tarragona",
-    "lat": 41.1192,
-    "lng": 1.2185
+    "lat": 41.119303,
+    "lng": 1.215341
   },
   "bonavista": {
     "id": "bonavista",
     "name": "Bonavista",
     "address": "Bonavista, 43006 Tarragona",
-    "lat": 41.117,
-    "lng": 1.1963
+    "lat": 41.11934,
+    "lng": 1.191015
   },
   "escola_pau_delclos": {
     "id": "escola_pau_delclos",
     "name": "Escola Pau Delclòs",
     "address": "Carrer d'en Granada, 11, 43003 Tarragona",
-    "lat": 41.11893,
-    "lng": 1.25875,
+    "lat": 41.114368,
+    "lng": 1.252571,
     "keywords": [
       "escola pau delclos",
       "pau delclos",
@@ -637,8 +637,8 @@
     "id": "escola_lasalle_tictac",
     "name": "Col·legi La Salle Tic-tac",
     "address": "Avinguda Catalunya, 24, 43002 Tarragona",
-    "lat": 41.1216,
-    "lng": 1.2518,
+    "lat": 41.120337,
+    "lng": 1.242136,
     "keywords": [
       "la salle tic-tac",
       "la salle tictac"
@@ -648,8 +648,8 @@
     "id": "escola_marenostrum",
     "name": "Col·legi Mare Nostrum",
     "address": "Carrer de la Móra, s/n, 43007 Tarragona",
-    "lat": 41.1284,
-    "lng": 1.2642,
+    "lat": 41.126649,
+    "lng": 1.282985,
     "keywords": [
       "mare nostrum",
       "col·legi mare nostrum"
@@ -659,8 +659,8 @@
     "id": "escola_lasalle_torreforta",
     "name": "Col·legi La Salle Torreforta",
     "address": "Carrer de les Canàries, 2, 43006 Tarragona",
-    "lat": 41.1186,
-    "lng": 1.2162,
+    "lat": 41.119875,
+    "lng": 1.212764,
     "keywords": [
       "la salle torreforta"
     ]
@@ -669,8 +669,8 @@
     "id": "escola_muntanyeta",
     "name": "CEE La Muntanyeta",
     "address": "Carrer de la Muntanyeta, s/n, 43007 Tarragona",
-    "lat": 41.1352,
-    "lng": 1.2515,
+    "lat": 41.131983,
+    "lng": 1.250665,
     "keywords": [
       "la muntanyeta",
       "cee la muntanyeta"
@@ -680,8 +680,8 @@
     "id": "escola_solc",
     "name": "CEEPSIR Escola Solc",
     "address": "Carretera de la Savinosa, s/n, 43007 Tarragona",
-    "lat": 41.12275,
-    "lng": 1.2778,
+    "lat": 41.100237,
+    "lng": 1.201798,
     "keywords": [
       "escola solc",
       "ceepsir escola solc"
@@ -691,8 +691,8 @@
     "id": "escola_lasalle",
     "name": "Col·legi La Salle Tarragona",
     "address": "Avinguda de Catalunya, 24, 43002 Tarragona",
-    "lat": 41.1216,
-    "lng": 1.2518,
+    "lat": 41.133762,
+    "lng": 1.245354,
     "keywords": [
       "col·legi la salle",
       "la salle tarragona"
@@ -702,8 +702,8 @@
     "id": "escola_arrabassada",
     "name": "Institut Escola l'Arrabassada",
     "address": "Carrer de Carles Riba, 1, 43007 Tarragona",
-    "lat": 41.1258,
-    "lng": 1.2745,
+    "lat": 41.115651,
+    "lng": 1.271123,
     "keywords": [
       "escola arrabassada",
       "institut escola arrabassada"
@@ -713,8 +713,8 @@
     "id": "escola_marcel_lidomingo",
     "name": "Escola Marcel·lí Domingo",
     "address": "Bloc Sant Joan, s/n (Sant Pere i Sant Pau), 43007 Tarragona",
-    "lat": 41.1357,
-    "lng": 1.2532,
+    "lat": 41.13894,
+    "lng": 1.247064,
     "keywords": [
       "marcel·lí domingo",
       "escola marcel·lí domingo"
@@ -724,8 +724,8 @@
     "id": "escola_santpau",
     "name": "Col·legi Sant Pau Apòstol",
     "address": "Avinguda Catalunya, 32, 43002 Tarragona",
-    "lat": 41.1222,
-    "lng": 1.2528,
+    "lat": 41.121473,
+    "lng": 1.257704,
     "keywords": [
       "sant pau apòstol",
       "col·legi sant pau"
@@ -735,8 +735,8 @@
     "id": "escola_dominiques",
     "name": "Col·legi Dominiques Tarragona",
     "address": "Carrer de les Coques, 1, 43003 Tarragona",
-    "lat": 41.11812,
-    "lng": 1.25752,
+    "lat": 41.119082,
+    "lng": 1.250591,
     "keywords": [
       "dominiques",
       "col·legi dominiques"
@@ -746,8 +746,8 @@
     "id": "escola_carme",
     "name": "Col·legi Mare de Déu del Carme",
     "address": "Carrer de l'Ensenyança, 7, 43003 Tarragona",
-    "lat": 41.11865,
-    "lng": 1.25845,
+    "lat": 41.118419,
+    "lng": 1.24929,
     "keywords": [
       "mare de déu del carme",
       "col·legi del carme"
@@ -757,8 +757,8 @@
     "id": "escola_saavedra",
     "name": "Escola Saavedra",
     "address": "Via de l'Imperi Romà, 17, 43003 Tarragona",
-    "lat": 41.1197,
-    "lng": 1.2546,
+    "lat": 41.117903,
+    "lng": 1.253015,
     "keywords": [
       "escola saavedra",
       "saavedra"
@@ -768,8 +768,8 @@
     "id": "escola_practiques",
     "name": "Escola Pràctiques",
     "address": "Avinguda de Roma, 2, 43001 Tarragona",
-    "lat": 41.1179,
-    "lng": 1.2465,
+    "lat": 41.132275,
+    "lng": 1.24182,
     "keywords": [
       "escola pràctiques",
       "pràctiques"
@@ -779,8 +779,8 @@
     "id": "escola_mediterrani",
     "name": "Institut Escola Mediterrani",
     "address": "Carrer de Riu Siurana, 1, 43006 Tarragona",
-    "lat": 41.1198,
-    "lng": 1.2025,
+    "lat": 41.115609,
+    "lng": 1.201853,
     "keywords": [
       "institut escola mediterrani",
       "mediterrani"
@@ -790,8 +790,8 @@
     "id": "escola_lestonnac",
     "name": "Col·legi Lestonnac-L'Ensenyança",
     "address": "Carrer de l'Ensenyança, 1, 43003 Tarragona",
-    "lat": 41.1184,
-    "lng": 1.25805,
+    "lat": 41.119676,
+    "lng": 1.259201,
     "keywords": [
       "lestonnac",
       "l'ensenyança"
@@ -801,8 +801,8 @@
     "id": "escola_elsangels",
     "name": "Escola Els Àngels",
     "address": "Carrer de Riu Siurana, s/n, 43006 Tarragona",
-    "lat": 41.1172,
-    "lng": 1.2185,
+    "lat": 41.121611,
+    "lng": 1.211934,
     "keywords": [
       "escola els àngels",
       "els àngels"
@@ -812,8 +812,8 @@
     "id": "escola_cesaraugust",
     "name": "Escola Cèsar August",
     "address": "Avinguda de Maria Cristina, 18, 43002 Tarragona",
-    "lat": 41.1228,
-    "lng": 1.2506,
+    "lat": 41.121117,
+    "lng": 1.237915,
     "keywords": [
       "escola cèsar august",
       "cèsar august"
@@ -835,8 +835,8 @@
     "id": "santmiquel",
     "name": "Església de Sant Miquel del Pla",
     "address": "Carrer de Sant Miquel, s/n, 43003 Tarragona",
-    "lat": 41.118,
-    "lng": 1.256,
+    "lat": 41.118802,
+    "lng": 1.255919,
     "keywords": [
       "sant miquel del pla"
     ]

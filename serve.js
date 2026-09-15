@@ -32,31 +32,76 @@ const server = http.createServer((req, res) => {
     req.on('end', () => {
       try {
         const payload = JSON.parse(body);
-        const programPath = path.join(__dirname, 'data', 'program.json');
-        const programJsPath = path.join(__dirname, 'data', 'program.js');
+        const locPath = path.join(__dirname, 'data', 'locations.json');
+        const locJsPath = path.join(__dirname, 'data', 'locations.js');
         
-        const programData = JSON.parse(fs.readFileSync(programPath, 'utf8'));
-        const ev = programData.find(x => x.id === payload.id);
+        const locationsData = JSON.parse(fs.readFileSync(locPath, 'utf8'));
+        const locId = payload.location_id || payload.id;
 
-        if (ev) {
-          if (!ev.route_info) ev.route_info = {};
-          ev.route_info.waypoints = payload.waypoints || [];
-          ev.route_info.coordinates = payload.coordinates || [];
-          ev.route_info.is_configured = true;
-          ev.route_info.is_manual = true;
-          ev.route_info.has_route = true;
+        if (locId && locationsData[locId]) {
+          const loc = locationsData[locId];
+          if (!loc.route_info) loc.route_info = { has_route: true };
+          loc.route_info.waypoints = payload.waypoints || [];
+          loc.route_info.coordinates = payload.coordinates || [];
+          loc.route_info.is_configured = true;
+          loc.route_info.is_manual = true;
+          loc.route_info.has_route = true;
 
-          fs.writeFileSync(programPath, JSON.stringify(programData, null, 2));
-          fs.writeFileSync(programJsPath, 'window.PROGRAM_DATA = ' + JSON.stringify(programData, null, 2) + ';\n');
+          if (payload.waypoints && payload.waypoints.length > 0) {
+            loc.lat = payload.waypoints[0].lat;
+            loc.lng = payload.waypoints[0].lng;
+          }
+
+          fs.writeFileSync(locPath, JSON.stringify(locationsData, null, 2));
+          fs.writeFileSync(locJsPath, 'window.locationsData = ' + JSON.stringify(locationsData, null, 2) + ';\n');
 
           res.writeHead(200, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify({ success: true, message: 'Itinerari guardat correctament!' }));
+          res.end(JSON.stringify({ success: true, message: 'Itinerari guardat correctament a locations.json!' }));
         } else {
           res.writeHead(404, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify({ success: false, message: 'Acte no trobat' }));
+          res.end(JSON.stringify({ success: false, message: 'Ubicació no trobada: ' + locId }));
         }
       } catch (err) {
         console.error("Error saving route:", err);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, message: err.message }));
+      }
+    });
+    return;
+  }
+
+  // Handle POST /api/save-location
+  if (req.method === 'POST' && reqUrl === '/api/save-location') {
+    let body = '';
+    req.on('data', chunk => { body += chunk.toString(); });
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body);
+        const locPath = path.join(__dirname, 'data', 'locations.json');
+        const locJsPath = path.join(__dirname, 'data', 'locations.js');
+        
+        const locationsData = JSON.parse(fs.readFileSync(locPath, 'utf8'));
+        if (payload.id) {
+          if (!locationsData[payload.id]) {
+            locationsData[payload.id] = { id: payload.id };
+          }
+          const loc = locationsData[payload.id];
+          if (payload.name !== undefined) loc.name = payload.name;
+          if (payload.address !== undefined) loc.address = payload.address;
+          if (payload.lat !== undefined) loc.lat = parseFloat(payload.lat);
+          if (payload.lng !== undefined) loc.lng = parseFloat(payload.lng);
+
+          fs.writeFileSync(locPath, JSON.stringify(locationsData, null, 2));
+          fs.writeFileSync(locJsPath, 'window.locationsData = ' + JSON.stringify(locationsData, null, 2) + ';\n');
+
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: true, message: 'Ubicació guardada correctament a locations.json!' }));
+        } else {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: false, message: 'ID d\'ubicació requerit' }));
+        }
+      } catch (err) {
+        console.error("Error saving location:", err);
         res.writeHead(500, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ success: false, message: err.message }));
       }
