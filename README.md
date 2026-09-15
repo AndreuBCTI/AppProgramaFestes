@@ -197,6 +197,20 @@ Per a les revetlles que s'allarguen durant tota la nit d'un dia a l'altre (ex: N
 
 ---
 
+### C. Subsistema de Configuració i Confirmació d'Itineraris (`mapRuteConfig.html` & `route_engine.js`)
+L'aplicació compta amb un **subsistema d'edició i generació de rutes** dissenyat per configurar, validar i confirmar els recorreguts de les cercaviles i correfocs sobre el pla urbà de Tarragona:
+
+1. **Configurador Visual d'Itineraris (`mapRuteConfig.html`)**:
+   - Interfície visual interactiva desenvolupada amb Leaflet.js per a la gestió de rutes festives.
+   - Permet seleccionar qualsevol activitat del programa, visualitzar la seva línia de recorregut i editar interactivament els punts de pas (*waypoints*) arrossegant-los directament sobre el mapa.
+   - Permet confirmar i exportar l'estructura JSON actualitzada de l'itinerari (`waypoints` i `coordinates`) per desar-la directament al repositori central de localitzacions (`locations.json`).
+
+2. **Motor de Rutes i Graf de Carrers (`route_engine.js` & `streets_geom.json`)**:
+   - Utilitza la geometria dels carrers de Tarragona (`streets_geom.json`) i la xarxa d'interseccions (`data/intersections.json`) per construir un graf de navegació de la ciutat.
+   - Analitza la descripció textual dels itineraris oficials (ex: *"pl. Sedassos, c. Sant Domènec, pl. de la Font..."*) i aplica algoritmes de cerca de camins (*pathfinding*) per calcular automàticament les coordenades GPS contínues al llarg del traçat dels carrers.
+
+---
+
 ## 📂 5. Estructura del Repositori a GitHub
 
 ```text
