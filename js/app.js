@@ -957,13 +957,23 @@ async function triggerPullToRefresh() {
       ptrIcon.innerHTML = "🔄";
       ptrIcon.classList.add("spinning");
     }
-    if (ptrLabel) ptrLabel.textContent = "Recarregant la pàgina...";
+    if (ptrLabel) ptrLabel.textContent = "Actualitzant aplicació...";
   }
 
-  // Full browser page reload
+  try {
+    if ('serviceWorker' in navigator) {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      for (let reg of registrations) {
+        await reg.update();
+      }
+    }
+  } catch (err) {
+    console.warn("SW update error:", err);
+  }
+
   setTimeout(() => {
     window.location.reload();
-  }, 300);
+  }, 400);
 }
 
 function dismissSwipeHint() {
