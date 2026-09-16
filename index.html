@@ -63,12 +63,15 @@
           </div>
 
           <div class="filter-mode">
-            <input
-              type="checkbox"
-              id="chk-all-day"
-              onchange="toggleAllDay(this.checked)"
-            />
-            <label for="chk-all-day">Tot el dia</label>
+            <label class="switch-toggle" for="chk-all-day" title="Mostrar tots els actes del dia">
+              <input
+                type="checkbox"
+                id="chk-all-day"
+                onchange="toggleAllDay(this.checked)"
+              />
+              <span class="switch-slider"></span>
+            </label>
+            <label for="chk-all-day" class="switch-label">Tot el dia</label>
           </div>
         </div>
 
