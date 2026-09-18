@@ -138,6 +138,22 @@ function formatRange(h) {
   return `${pad}:00 h - ${pad}:59 h`;
 }
 
+const ALL_DAYS = [
+  "2026-09-12",
+  "2026-09-13",
+  "2026-09-14",
+  "2026-09-15",
+  "2026-09-16",
+  "2026-09-17",
+  "2026-09-18",
+  "2026-09-19",
+  "2026-09-20",
+  "2026-09-21",
+  "2026-09-22",
+  "2026-09-23",
+  "2026-09-24",
+];
+
 // Selecció de dia
 function setDay(dayStr) {
   currentDay = dayStr;
@@ -146,6 +162,9 @@ function setDay(dayStr) {
   dayButtons.forEach((btn) => {
     if (btn.getAttribute("onclick") && btn.getAttribute("onclick").includes(dayStr)) {
       btn.classList.add("active");
+      try {
+        btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      } catch (e) {}
     } else {
       btn.classList.remove("active");
     }
@@ -173,7 +192,10 @@ function setDay(dayStr) {
     if (chkAllDay) chkAllDay.disabled = false;
     if (filterMode) filterMode.classList.remove("disabled");
     if (row2) row2.classList.remove("disabled");
-    if (hourSlider) hourSlider.disabled = false;
+    if (hourSlider) {
+      hourSlider.disabled = false;
+      hourSlider.value = currentHour;
+    }
     arrowBtns.forEach((b) => (b.disabled = false));
     if (timeVal) timeVal.textContent = showAllDay ? "Tot el dia" : formatRange(currentHour);
   }
@@ -198,12 +220,41 @@ function updateTimeSliderManual(val) {
   renderSchedule();
 }
 
-// Canvi d'hora amb botons d'avançament
+// Canvi d'hora amb botons d'avançament / swipe
 function shiftHour(direction) {
   if (currentDay === "2026-09-22 to 2026-09-23") return;
   let nextH = currentHour + direction;
-  if (nextH < 8) nextH = 8;
-  if (nextH > 26) nextH = 26;
+
+  // Avance de dia quan es supera l'última hora (26h)
+  if (nextH > 26) {
+    const idx = ALL_DAYS.indexOf(currentDay);
+    if (idx !== -1 && idx < ALL_DAYS.length - 1) {
+      const nextDay = ALL_DAYS[idx + 1];
+      animationClass = "animate-next";
+      currentHour = 8;
+      setDay(nextDay);
+      showAppToast(`📅 Canvi al dia: ${formatNavDateLabel(nextDay, "")}`);
+      return;
+    } else {
+      nextH = 26;
+    }
+  }
+
+  // Retrocés de dia quan es baixa de la primera hora (8h)
+  if (nextH < 8) {
+    const idx = ALL_DAYS.indexOf(currentDay);
+    if (idx > 0) {
+      const prevDay = ALL_DAYS[idx - 1];
+      animationClass = "animate-prev";
+      currentHour = 26;
+      setDay(prevDay);
+      showAppToast(`📅 Canvi al dia: ${formatNavDateLabel(prevDay, "")}`);
+      return;
+    } else {
+      nextH = 8;
+    }
+  }
+
   if (nextH === currentHour) return;
 
   animationClass = direction > 0 ? "animate-next" : "animate-prev";
