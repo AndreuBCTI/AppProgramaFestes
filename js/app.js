@@ -855,10 +855,13 @@ let touchStartY = 0;
 let touchEndX = 0;
 let touchEndY = 0;
 let isPullingDown = false;
-let ptrThreshold = 65;
+let isSwipingHorizontal = false;
+let canPullToRefresh = false;
+let ptrThreshold = 75;
 
 function setupSwipeGestures() {
   const swipeArea = document.getElementById("swipe-area");
+  const scheduleList = document.getElementById("schedule-list");
   const ptrIndicator = document.getElementById("ptr-indicator");
   const ptrIcon = document.getElementById("ptr-icon");
   const ptrLabel = document.getElementById("ptr-label");
@@ -876,6 +879,12 @@ function setupSwipeGestures() {
       touchStartX = e.touches[0].clientX;
       touchStartY = e.touches[0].clientY;
       isPullingDown = false;
+      isSwipingHorizontal = false;
+      canPullToRefresh = (swipeArea.scrollTop <= 0);
+
+      if (scheduleList) {
+        scheduleList.style.transition = "none";
+      }
     },
     { passive: true }
   );
@@ -883,13 +892,25 @@ function setupSwipeGestures() {
   swipeArea.addEventListener(
     "touchmove",
     function (e) {
+      const currentX = e.touches[0].clientX;
       const currentY = e.touches[0].clientY;
+      const dx = currentX - touchStartX;
       const dy = currentY - touchStartY;
 
-      // Enable Pull to Refresh only if scrolled to top
-      if (swipeArea.scrollTop <= 2 && dy > 0) {
+      // Check if user is starting a horizontal swipe (elements follow finger in real-time)
+      if (!isPullingDown && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+        isSwipingHorizontal = true;
+        if (scheduleList) {
+          scheduleList.style.transform = `translateX(${dx}px)`;
+          scheduleList.style.opacity = `${Math.max(0.4, 1 - Math.abs(dx) / 450)}`;
+        }
+        return;
+      }
+
+      // Enable Pull to Refresh only if vertical pull down from top
+      if (canPullToRefresh && !isSwipingHorizontal && dy > 12 && Math.abs(dy) > Math.abs(dx) * 1.8 && swipeArea.scrollTop <= 0) {
         isPullingDown = true;
-        const pullDist = Math.min(dy * 0.45, 80);
+        const pullDist = Math.min((dy - 12) * 0.38, 85);
 
         if (ptrIndicator) {
           ptrIndicator.classList.add("active");
@@ -903,6 +924,16 @@ function setupSwipeGestures() {
             ptrLabel.textContent = "Estira cap avall per actualitzar...";
           }
         }
+
+        if (scheduleList) {
+          scheduleList.style.transform = `translateY(${pullDist * 0.35}px)`;
+        }
+      } else if (!isPullingDown && ptrIndicator) {
+        ptrIndicator.style.height = "0px";
+        ptrIndicator.classList.remove("active");
+        if (scheduleList && !isSwipingHorizontal) {
+          scheduleList.style.transform = "none";
+        }
       }
     },
     { passive: true }
@@ -914,18 +945,59 @@ function setupSwipeGestures() {
       touchEndX = e.changedTouches[0].clientX;
       touchEndY = e.changedTouches[0].clientY;
       
-      const deltaY = touchEndY - touchStartY;
-      const pullDist = deltaY * 0.45;
+      const dx = touchEndX - touchStartX;
+      const dy = touchEndY - touchStartY;
+      const pullDist = Math.max(0, (dy - 12) * 0.38);
 
-      if (isPullingDown && pullDist >= ptrThreshold) {
+      if (isPullingDown && pullDist >= ptrThreshold && canPullToRefresh) {
+        if (scheduleList) {
+          scheduleList.style.transition = "transform 0.2s ease";
+          scheduleList.style.transform = "translateY(54px)";
+        }
         triggerPullToRefresh();
-      } else if (ptrIndicator) {
-        ptrIndicator.style.height = "0px";
-        ptrIndicator.classList.remove("active");
+      } else if (isPullingDown) {
+        if (ptrIndicator) {
+          ptrIndicator.style.height = "0px";
+          ptrIndicator.classList.remove("active");
+        }
+        if (scheduleList) {
+          scheduleList.style.transition = "transform 0.25s cubic-bezier(0.25, 1, 0.5, 1)";
+          scheduleList.style.transform = "translateY(0)";
+        }
+      }
+
+      if (isSwipingHorizontal && scheduleList) {
+        scheduleList.style.transition = "transform 0.22s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.22s ease";
+        if (Math.abs(dx) > 55) {
+          // Slide out current cards
+          const direction = dx < 0 ? -1 : 1;
+          scheduleList.style.transform = `translateX(${direction * 100}%)`;
+          scheduleList.style.opacity = "0";
+
+          setTimeout(() => {
+            shiftHour(direction < 0 ? 1 : -1);
+            // Position new cards on opposite side and animate in
+            scheduleList.style.transition = "none";
+            scheduleList.style.transform = `translateX(${-direction * 100}%)`;
+            
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                scheduleList.style.transition = "transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.25s ease";
+                scheduleList.style.transform = "translateX(0)";
+                scheduleList.style.opacity = "1";
+              });
+            });
+          }, 180);
+        } else {
+          // Snap back if threshold not reached
+          scheduleList.style.transform = "translateX(0)";
+          scheduleList.style.opacity = "1";
+        }
       }
 
       isPullingDown = false;
-      handleGesture();
+      isSwipingHorizontal = false;
+      canPullToRefresh = false;
     },
     { passive: true }
   );
@@ -954,7 +1026,7 @@ async function triggerPullToRefresh() {
     ptrIndicator.classList.add("active");
     ptrIndicator.style.height = "54px";
     if (ptrIcon) {
-      ptrIcon.innerHTML = "🔄";
+      ptrIcon.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>`;
       ptrIcon.classList.add("spinning");
     }
     if (ptrLabel) ptrLabel.textContent = "Actualitzant aplicació...";
